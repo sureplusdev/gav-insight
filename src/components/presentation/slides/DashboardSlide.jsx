@@ -10,11 +10,11 @@ const PORTFOLIO = [
 ];
 
 const SYSTEMIC = [
-  { issue: "D5 (Compliance)", count: 8, impact: "alto", color: "from-red-500" },
-  { issue: "D4 (Garantias)", count: 5, impact: "médio", color: "from-amber-500" },
-  { issue: "G3 (Runway)", count: 3, impact: "médio", color: "from-orange-500" },
-  { issue: "D1 (TRL)", count: 2, impact: "baixo", color: "from-blue-500" }
-];
+   { issue: "D5 (Compliance)", count: 8, impact: "alto", color: "#31C0DA" },
+   { issue: "D4 (Garantias)", count: 5, impact: "médio", color: "#31C0DA" },
+   { issue: "G3 (Runway)", count: 3, impact: "médio", color: "#31C0DA" },
+   { issue: "D1 (TRL)", count: 2, impact: "baixo", color: "#31C0DA" }
+ ];
 
 export default function DashboardSlide() {
   return (
@@ -43,7 +43,7 @@ export default function DashboardSlide() {
             className="p-6 rounded-2xl bg-white/[0.02] border border-white/5"
           >
             <div className="flex items-center gap-2 mb-6">
-              <TrendingUp className="w-5 h-5 text-brand-500" />
+               <TrendingUp className="w-5 h-5" style={{ color: "#31C0DA" }} />
               <h3 className="text-white font-semibold">Ranking por ENDV</h3>
             </div>
             <div className="space-y-3">
@@ -53,21 +53,23 @@ export default function DashboardSlide() {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 + i * 0.1 }}
-                  className="p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/20 transition-all"
+                  className="p-4 rounded-xl border transition-all" style={{
+                    backgroundColor: "rgba(255, 255, 255, 0.02)",
+                    borderColor: "rgba(49, 192, 218, 0.15)"
+                  }}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div>
                       <h4 className="text-white font-medium text-sm">{item.name}</h4>
-                      <span className={`inline-flex items-center gap-1.5 mt-1 px-2 py-0.5 text-[10px] rounded border ${
-                        item.status === "ready" ? "bg-brand-500/10 border-brand-500/20 text-brand-300" :
-                        item.status === "qualify" ? "bg-brand-400/10 border-brand-400/20 text-brand-200" :
-                        item.status === "watch" ? "bg-orange-500/10 border-orange-500/20 text-orange-300" :
-                        "bg-red-500/10 border-red-500/20 text-red-300"
-                      }`}>
+                      <span className="inline-flex items-center gap-1.5 mt-1 px-2 py-0.5 text-[10px] rounded border" style={{
+                        backgroundColor: "rgba(49, 192, 218, 0.1)",
+                        borderColor: "rgba(49, 192, 218, 0.2)",
+                        color: "rgba(49, 192, 218, 0.7)"
+                      }}>
                         {item.evidence}
                       </span>
                     </div>
-                    <span className="text-brand-500 font-bold text-sm">
+                    <span className="font-bold text-sm" style={{ color: "#31C0DA" }}>
                       R${(item.endv/1000000).toFixed(1)}M
                     </span>
                   </div>
@@ -77,7 +79,7 @@ export default function DashboardSlide() {
                         initial={{ width: 0 }}
                         animate={{ width: `${item.readiness}%` }}
                         transition={{ delay: 0.5 + i * 0.1, duration: 0.8 }}
-                        className="h-full bg-gradient-to-r from-brand-500 to-brand-400"
+                        className="h-full" style={{ background: "linear-gradient(to right, #31C0DA, #2C8FAE)" }}
                       />
                     </div>
                     <span className="text-white/40 text-xs font-mono w-8 text-right">
@@ -97,7 +99,7 @@ export default function DashboardSlide() {
             className="p-6 rounded-2xl bg-white/[0.02] border border-white/5"
           >
             <div className="flex items-center gap-2 mb-6">
-              <AlertCircle className="w-5 h-5 text-brand-400" />
+               <AlertCircle className="w-5 h-5" style={{ color: "#31C0DA" }} />
               <h3 className="text-white font-semibold">Gargalos Sistêmicos</h3>
             </div>
             <div className="space-y-3">
@@ -116,15 +118,14 @@ export default function DashboardSlide() {
                   <div className="flex items-center gap-2">
                     <div className="h-1.5 bg-white/5 rounded-full flex-1 overflow-hidden">
                       <div
-                        className={`h-full bg-gradient-to-r from-brand-500 to-brand-400/20`}
+                        className="h-full" style={{ background: "linear-gradient(to right, #31C0DA, rgba(49, 192, 218, 0.2))" }}
                         style={{ width: `${item.count * 20}%` }}
                       />
                     </div>
-                    <span className={`text-xs font-semibold px-2 py-0.5 rounded ${
-                      item.impact === "alto" ? "bg-red-500/10 text-red-300" :
-                      item.impact === "médio" ? "bg-amber-500/10 text-amber-300" :
-                      "bg-blue-500/10 text-blue-300"
-                    }`}>
+                    <span className="text-xs font-semibold px-2 py-0.5 rounded" style={{
+                      backgroundColor: "rgba(49, 192, 218, 0.1)",
+                      color: "#31C0DA"
+                    }}>
                       {item.impact}
                     </span>
                   </div>
@@ -141,20 +142,32 @@ export default function DashboardSlide() {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="mt-8 grid grid-cols-1 sm:grid-cols-4 gap-4"
         >
-          <div className="p-4 rounded-xl bg-gradient-to-br from-brand-500/10 to-transparent border border-brand-500/15">
-            <p className="text-brand-400/60 text-xs font-mono mb-1">ENDV TOTAL</p>
+          <div className="p-4 rounded-xl border" style={{
+            background: "linear-gradient(to bottom right, rgba(49, 192, 218, 0.1), transparent)",
+            borderColor: "rgba(49, 192, 218, 0.15)"
+          }}>
+            <p className="text-xs font-mono mb-1" style={{ color: "rgba(49, 192, 218, 0.6)" }}>ENDV TOTAL</p>
             <p className="text-white font-bold text-xl">R$ 6.9M</p>
           </div>
-          <div className="p-4 rounded-xl bg-gradient-to-br from-brand-400/10 to-transparent border border-brand-400/15">
-            <p className="text-brand-300/60 text-xs font-mono mb-1">READINESS MÉD</p>
+          <div className="p-4 rounded-xl border" style={{
+            background: "linear-gradient(to bottom right, rgba(49, 192, 218, 0.1), transparent)",
+            borderColor: "rgba(49, 192, 218, 0.15)"
+          }}>
+            <p className="text-xs font-mono mb-1" style={{ color: "rgba(49, 192, 218, 0.6)" }}>READINESS MÉD</p>
             <p className="text-white font-bold text-xl">59%</p>
           </div>
-          <div className="p-4 rounded-xl bg-gradient-to-br from-amber-500/10 to-transparent border border-amber-500/15">
-            <p className="text-amber-400/60 text-xs font-mono mb-1">PIPELINE</p>
+          <div className="p-4 rounded-xl border" style={{
+            background: "linear-gradient(to bottom right, rgba(49, 192, 218, 0.1), transparent)",
+            borderColor: "rgba(49, 192, 218, 0.15)"
+          }}>
+            <p className="text-xs font-mono mb-1" style={{ color: "rgba(49, 192, 218, 0.6)" }}>PIPELINE</p>
             <p className="text-white font-bold text-xl">4/6</p>
           </div>
-          <div className="p-4 rounded-xl bg-gradient-to-br from-red-500/10 to-transparent border border-red-500/15">
-            <p className="text-red-400/60 text-xs font-mono mb-1">EM ALERTA</p>
+          <div className="p-4 rounded-xl border" style={{
+            background: "linear-gradient(to bottom right, rgba(49, 192, 218, 0.1), transparent)",
+            borderColor: "rgba(49, 192, 218, 0.15)"
+          }}>
+            <p className="text-xs font-mono mb-1" style={{ color: "rgba(49, 192, 218, 0.6)" }}>EM ALERTA</p>
             <p className="text-white font-bold text-xl">2</p>
           </div>
         </motion.div>
