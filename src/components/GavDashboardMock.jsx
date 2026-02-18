@@ -206,7 +206,44 @@ export default function GavDashboardMock() {
 
             {/* Tier */}
             <div className="md:col-span-2">
-              <div className="text-xs font-medium text-white/60 mb-2">TIER</div>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="text-xs font-medium text-white/60">TIER</div>
+                <Dialog open={helpModal === "tier"} onOpenChange={(open) => setHelpModal(open ? "tier" : null)}>
+                  <DialogTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="text-white/60 hover:text-white h-5 w-5 p-0"
+                      title="O que significa Tier?"
+                    >
+                      <HelpCircle className="h-3.5 w-3.5" />
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-sm border-white/10 p-0 overflow-hidden" style={{ backgroundColor: "#0F1F38" }}>
+                    <div className="px-6 py-4 border-b border-white/10" style={{ backgroundColor: "#193A62" }}>
+                      <DialogTitle className="text-white">O que é Tier?</DialogTitle>
+                    </div>
+                    <div className="p-6 text-white/90 space-y-4">
+                      <div>
+                        <p className="text-sm font-semibold" style={{ color: "#31C0DA" }}>Tier A</p>
+                        <p className="text-xs text-white/70">80–100 | Alta qualidade e capturabilidade</p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold" style={{ color: "#31C0DA" }}>Tier B</p>
+                        <p className="text-xs text-white/70">65–79 | Bom potencial, requer ajustes</p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold" style={{ color: "#31C0DA" }}>Tier C</p>
+                        <p className="text-xs text-white/70">50–64 | Viável com ações corretivas</p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold" style={{ color: "#31C0DA" }}>Tier D</p>
+                        <p className="text-xs text-white/70">0–49 | Precisa de correção forte</p>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
               <Select value={tier} onValueChange={setTier}>
                 <SelectTrigger className="bg-white/5 border-white/10 text-white">
                   <SelectValue placeholder="Todos" />
