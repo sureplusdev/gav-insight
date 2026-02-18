@@ -385,8 +385,8 @@ export default function GavDashboardMock() {
                           {Object.entries(startup.dims).map(([dim, score]) => (
                             <div key={dim}>
                               <div className="flex justify-between text-xs mb-1">
-                                <span className="text-white/60">{dim.toUpperCase()}</span>
-                                <span className="text-white/40">{score}%</span>
+                                <span className="text-gray-700">{dim.toUpperCase()}</span>
+                                <span className="text-gray-500">{score}%</span>
                               </div>
                               <Progress value={score} className="h-1" />
                             </div>
