@@ -1,0 +1,145 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, TrendingUp, AlertCircle, CheckCircle2 } from "lucide-react";
+
+const GATES_BEFORE = [
+  { gate: "G1", label: "Núcleo executável", status: "CONDICIONAL", color: "text-amber-400", bg: "bg-amber-500/10" },
+  { gate: "G2", label: "Hipótese técnica", status: "PASSA", color: "text-emerald-400", bg: "bg-emerald-500/10" },
+  { gate: "G3", label: "Runway/latência", status: "CONDICIONAL", color: "text-amber-400", bg: "bg-amber-500/10" },
+];
+
+const SPRINTS = [
+  { sprint: "Sprint 1", days: "14d", action: "Pacote documental mínimo (D5) + dono do processo (D3)" },
+  { sprint: "Sprint 2", days: "30d", action: "Teste em ambiente real + evidência E2/E3 (G1)" },
+  { sprint: "Sprint 3", days: "30d", action: "Estrutura de garantias/PMT + banco de relacionamento (D4)" },
+  { sprint: "Sprint 4", days: "15d", action: "Narrativa + orçamento + aderência edital (Grant N2)" },
+];
+
+export default function CaseSlide() {
+  return (
+    <div className="min-h-screen flex items-center bg-slate-950 py-20 px-6">
+      <div className="max-w-6xl mx-auto w-full">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="text-amber-400/60 text-xs font-semibold tracking-[0.2em] uppercase">
+            Mini-Case
+          </span>
+          <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
+            De "andando de lado"<br />
+            <span className="bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">
+              para pipeline com plano.
+            </span>
+          </h2>
+          <p className="mt-3 text-white/35 text-sm max-w-xl">
+            Startup B2B industrial — tecnologia promissora, dois trimestres sem avanço. 
+            Fundo gastando 6–8h/mês em calls e follow-ups sem resultado.
+          </p>
+        </motion.div>
+
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Before */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="p-6 rounded-2xl bg-gradient-to-br from-red-500/5 to-transparent border border-red-500/10"
+          >
+            <div className="flex items-center gap-2 mb-5">
+              <AlertCircle className="w-4 h-4 text-red-400" />
+              <h3 className="text-white/60 text-sm font-semibold tracking-wider uppercase">Diagnóstico GAV</h3>
+            </div>
+            <div className="space-y-3 mb-6">
+              {GATES_BEFORE.map((g) => (
+                <div key={g.gate} className="flex items-center justify-between p-3 rounded-xl bg-slate-950/50">
+                  <div className="flex items-center gap-2">
+                    <span className="text-white/20 text-xs font-mono">{g.gate}</span>
+                    <span className="text-white/50 text-sm">{g.label}</span>
+                  </div>
+                  <span className={`text-xs font-bold px-2 py-0.5 rounded ${g.bg} ${g.color}`}>
+                    {g.status}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-white/30 text-xs">Grant Fit (Base)</span>
+                <span className="text-white/60 text-sm font-bold">68 <span className="text-blue-400 text-xs font-normal">Tier B</span></span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-white/30 text-xs">Execution Readiness</span>
+                <span className="text-white/60 text-sm font-bold">54 <span className="text-amber-400 text-xs font-normal">Tier C</span></span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-white/30 text-xs">Grant Fit (Ajustado)</span>
+                <span className="text-white/60 text-sm font-bold">72 <span className="text-emerald-400 text-xs font-normal">+VDF</span></span>
+              </div>
+            </div>
+
+            <div className="mt-5 p-3 rounded-xl bg-red-500/5 border border-red-500/10">
+              <p className="text-white/30 text-xs">
+                <span className="text-red-400 font-medium">Cortado:</span> N3 (top grant) adiado por D5/D4 — evita queimar reputação.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* After — Plan */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="p-6 rounded-2xl bg-gradient-to-br from-emerald-500/5 to-transparent border border-emerald-500/10"
+          >
+            <div className="flex items-center gap-2 mb-5">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <h3 className="text-white/60 text-sm font-semibold tracking-wider uppercase">Plano 90 Dias</h3>
+            </div>
+
+            <div className="space-y-3">
+              {SPRINTS.map((s, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.6 + i * 0.1 }}
+                  className="p-3 rounded-xl bg-slate-950/50 border border-emerald-500/5"
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-emerald-400 text-xs font-bold">{s.sprint}</span>
+                    <span className="text-white/15 text-xs">({s.days})</span>
+                  </div>
+                  <p className="text-white/40 text-sm">{s.action}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-6 p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/10">
+              <div className="flex items-center gap-2 mb-2">
+                <TrendingUp className="w-4 h-4 text-emerald-400" />
+                <span className="text-white/50 text-xs font-semibold uppercase tracking-wider">Resultado esperado</span>
+              </div>
+              <ul className="space-y-1.5">
+                <li className="text-white/40 text-sm flex items-start gap-2">
+                  <ArrowRight className="w-3 h-3 text-emerald-400 mt-1 flex-shrink-0" />
+                  Readiness sobe — D3/D5 viram evidência real
+                </li>
+                <li className="text-white/40 text-sm flex items-start gap-2">
+                  <ArrowRight className="w-3 h-3 text-emerald-400 mt-1 flex-shrink-0" />
+                  ENDV sobe — por P(12m) e teto defendável
+                </li>
+                <li className="text-white/40 text-sm flex items-start gap-2">
+                  <ArrowRight className="w-3 h-3 text-emerald-400 mt-1 flex-shrink-0" />
+                  Fundo economiza tempo — pipeline com dono e prazo
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  );
+}
