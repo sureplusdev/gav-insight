@@ -107,6 +107,7 @@ export default function GavDashboardMock() {
   const [vertical, setVertical] = useState("ALL");
   const [onlyTop2, setOnlyTop2] = useState(false);
   const [selected, setSelected] = useState(null);
+  const [helpModal, setHelpModal] = useState(null);
 
   const resetDemo = () => {
     setQ("");
