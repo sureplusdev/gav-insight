@@ -15,6 +15,7 @@ import RoadmapSlide from "@/components/presentation/slides/RoadmapSlide";
 import DashboardSlide from "@/components/presentation/slides/DashboardSlide";
 import CaseSlide from "@/components/presentation/slides/CaseSlide";
 import CTASlide from "@/components/presentation/slides/CTASlide";
+import DeliverablesSlide from "@/components/presentation/slides/DeliverablesSlide";
 
 const TOTAL_SLIDES = 12;
 
