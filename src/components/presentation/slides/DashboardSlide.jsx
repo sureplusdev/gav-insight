@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { TrendingUp } from "lucide-react";
+import GavDashboardMock from "@/components/GavDashboardMock";
 
 const PORTFOLIO = [
   { name: "SolarTech X", endv: 4200000, evidence: "E3", readiness: 85 },
