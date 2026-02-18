@@ -24,7 +24,7 @@ export default function SimulatorSlide() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-brand-500/60 text-xs font-semibold tracking-[0.2em] uppercase">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "rgba(49, 192, 218, 0.6)" }}>
             Motor Econômico
           </span>
           <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
