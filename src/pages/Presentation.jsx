@@ -19,6 +19,7 @@ const TOTAL_SLIDES = 12;
 
 export default function Presentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isGlossaryOpen, setIsGlossaryOpen] = useState(false);
 
   const goNext = useCallback(() => {
     setCurrentSlide((prev) => Math.min(prev + 1, TOTAL_SLIDES - 1));
