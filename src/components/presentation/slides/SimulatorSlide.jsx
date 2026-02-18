@@ -47,14 +47,14 @@ export default function SimulatorSlide() {
                 Volume de Editais em Janela (R$)
               </label>
               <input
-                type="range"
-                min="1000000"
-                max="20000000"
-                step="500000"
-                value={ceiling}
-                onChange={(e) => setCeiling(parseInt(e.target.value))}
-                className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer accent-brand-500"
-              />
+                 type="range"
+                 min="1000000"
+                 max="20000000"
+                 step="500000"
+                 value={ceiling}
+                 onChange={(e) => setCeiling(parseInt(e.target.value))}
+                 className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer" style={{ accentColor: "#31C0DA" }}
+               />
               <motion.div
                 key={ceiling}
                 initial={{ scale: 0.9 }}
@@ -105,14 +105,14 @@ export default function SimulatorSlide() {
                 Fator de Execução (F_ex)
               </label>
               <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.1"
-                value={execution}
-                onChange={(e) => setExecution(parseFloat(e.target.value))}
-                className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer accent-brand-500"
-              />
+                 type="range"
+                 min="0"
+                 max="1"
+                 step="0.1"
+                 value={execution}
+                 onChange={(e) => setExecution(parseFloat(e.target.value))}
+                 className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer" style={{ accentColor: "#31C0DA" }}
+               />
               <motion.div
                 key={execution}
                 initial={{ scale: 0.9 }}
