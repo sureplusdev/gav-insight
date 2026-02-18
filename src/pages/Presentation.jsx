@@ -3,6 +3,7 @@ import { BookOpen } from "lucide-react";
 import SlideContainer from "@/components/presentation/SlideContainer";
 import SlideNav from "@/components/presentation/SlideNav";
 import GlossaryModal from "@/components/presentation/GlossaryModal";
+import BackgroundAnimation from "@/components/presentation/BackgroundAnimation";
 import HeroSlide from "@/components/presentation/slides/HeroSlide";
 import ProblemSlide from "@/components/presentation/slides/ProblemSlide";
 import SolutionSlide from "@/components/presentation/slides/SolutionSlide";
