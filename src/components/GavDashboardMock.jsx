@@ -397,7 +397,7 @@ export default function GavDashboardMock() {
                       {/* Top2 */}
                       {startup.top2.length > 0 && (
                         <div>
-                          <p className="text-white/60 text-xs font-semibold mb-2">Top2 Rotas</p>
+                          <p className="text-gray-700 text-xs font-semibold mb-2">Top2 Rotas</p>
                           <div className="flex flex-wrap gap-2">
                             {startup.top2.map((route) => (
                               <Badge key={route} style={{ backgroundColor: "rgba(49, 192, 218, 0.2)", color: "#31C0DA" }}>
