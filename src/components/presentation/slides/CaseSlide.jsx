@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { ArrowRight, TrendingUp, AlertCircle, CheckCircle2 } from "lucide-react";
 
 const GATES_BEFORE = [
-  { gate: "G1", label: "Núcleo executável", status: "CONDICIONAL", color: "text-amber-400", bg: "bg-amber-500/10" },
-  { gate: "G2", label: "Hipótese técnica", status: "PASSA", color: "text-emerald-400", bg: "bg-emerald-500/10" },
-  { gate: "G3", label: "Runway/latência", status: "CONDICIONAL", color: "text-amber-400", bg: "bg-amber-500/10" },
-];
+   { gate: "G1", label: "Núcleo executável", status: "CONDICIONAL", color: "#31C0DA", bg: "rgba(49, 192, 218, 0.1)" },
+   { gate: "G2", label: "Hipótese técnica", status: "PASSA", color: "#31C0DA", bg: "rgba(49, 192, 218, 0.1)" },
+   { gate: "G3", label: "Runway/latência", status: "CONDICIONAL", color: "#31C0DA", bg: "rgba(49, 192, 218, 0.1)" },
+ ];
 
 const SPRINTS = [
   { sprint: "Sprint 1", days: "14d", action: "Pacote documental mínimo (D5) + dono do processo (D3)" },
@@ -29,7 +29,12 @@ export default function CaseSlide() {
           </span>
           <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
             De "andando de lado"<br />
-            <span className="bg-gradient-to-r from-brand-500 to-brand-400 bg-clip-text text-transparent">
+            <span style={{ 
+              backgroundImage: "linear-gradient(to right, #31C0DA, #2C8FAE)",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              color: "transparent"
+            }}>
               para pipeline com plano.
             </span>
           </h2>
@@ -45,10 +50,13 @@ export default function CaseSlide() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className="p-6 rounded-2xl bg-gradient-to-br from-red-500/5 to-transparent border border-red-500/10"
+            className="p-6 rounded-2xl border" style={{
+              background: "linear-gradient(to bottom right, rgba(49, 192, 218, 0.05), transparent)",
+              borderColor: "rgba(49, 192, 218, 0.1)"
+            }}
           >
             <div className="flex items-center gap-2 mb-5">
-              <AlertCircle className="w-4 h-4 text-red-400" />
+               <AlertCircle className="w-4 h-4" style={{ color: "#31C0DA" }} />
               <h3 className="text-white/60 text-sm font-semibold tracking-wider uppercase">Diagnóstico GAV</h3>
             </div>
             <div className="space-y-3 mb-6">
@@ -58,7 +66,7 @@ export default function CaseSlide() {
                     <span className="text-white/20 text-xs font-mono">{g.gate}</span>
                     <span className="text-white/50 text-sm">{g.label}</span>
                   </div>
-                  <span className={`text-xs font-bold px-2 py-0.5 rounded ${g.bg} ${g.color}`}>
+                  <span className="text-xs font-bold px-2 py-0.5 rounded" style={{ backgroundColor: g.bg, color: g.color }}>
                     {g.status}
                   </span>
                 </div>
@@ -80,10 +88,13 @@ export default function CaseSlide() {
               </div>
             </div>
 
-            <div className="mt-5 p-3 rounded-xl bg-red-500/5 border border-red-500/10">
+            <div className="mt-5 p-3 rounded-xl border" style={{
+              backgroundColor: "rgba(49, 192, 218, 0.05)",
+              borderColor: "rgba(49, 192, 218, 0.1)"
+            }}>
               <p className="text-white/30 text-xs">
-                <span className="text-red-400 font-medium">Cortado:</span> N3 (top grant) adiado por D5/D4 — evita queimar reputação.
-              </p>
+                 <span className="font-medium" style={{ color: "#31C0DA" }}>Cortado:</span> N3 (top grant) adiado por D5/D4 — evita queimar reputação.
+               </p>
             </div>
           </motion.div>
 
@@ -92,10 +103,13 @@ export default function CaseSlide() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="p-6 rounded-2xl bg-gradient-to-br from-emerald-500/5 to-transparent border border-emerald-500/10"
+            className="p-6 rounded-2xl border" style={{
+              background: "linear-gradient(to bottom right, rgba(49, 192, 218, 0.05), transparent)",
+              borderColor: "rgba(49, 192, 218, 0.1)"
+            }}
           >
             <div className="flex items-center gap-2 mb-5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+               <CheckCircle2 className="w-4 h-4" style={{ color: "#31C0DA" }} />
               <h3 className="text-white/60 text-sm font-semibold tracking-wider uppercase">Plano 90 Dias</h3>
             </div>
 
@@ -106,10 +120,13 @@ export default function CaseSlide() {
                   initial={{ opacity: 0, x: 10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6 + i * 0.1 }}
-                  className="p-3 rounded-xl bg-slate-950/50 border border-emerald-500/5"
+                  className="p-3 rounded-xl border" style={{
+                    backgroundColor: "rgba(0, 0, 0, 0.3)",
+                    borderColor: "rgba(49, 192, 218, 0.05)"
+                  }}
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-emerald-400 text-xs font-bold">{s.sprint}</span>
+                    <span className="text-xs font-bold" style={{ color: "#31C0DA" }}>{s.sprint}</span>
                     <span className="text-white/15 text-xs">({s.days})</span>
                   </div>
                   <p className="text-white/40 text-sm">{s.action}</p>
@@ -117,9 +134,12 @@ export default function CaseSlide() {
               ))}
             </div>
 
-            <div className="mt-6 p-4 rounded-xl bg-brand-500/5 border border-brand-500/10">
+            <div className="mt-6 p-4 rounded-xl border" style={{
+              backgroundColor: "rgba(49, 192, 218, 0.05)",
+              borderColor: "rgba(49, 192, 218, 0.1)"
+            }}>
               <div className="flex items-center gap-2 mb-2">
-                <TrendingUp className="w-4 h-4 text-brand-500" />
+                <TrendingUp className="w-4 h-4" style={{ color: "#31C0DA" }} />
                 <span className="text-white/50 text-xs font-semibold uppercase tracking-wider">Resultado esperado</span>
               </div>
               <ul className="space-y-1.5">
