@@ -45,16 +45,15 @@ export default function InovacredSlide() {
               <tbody className="text-white">
                 <tr className="border-b border-white/5">
                   <td className="p-3 font-semibold">Micro / EPP / Pequena</td>
-                  <td className="p-3 rowSpan="2">Até R$ 15M</td>
+                  <td className="p-3">Até R$ 15M</td>
                   <td className="p-3 font-bold text-[#31C0DA]">TR + 6,068% a.a.</td>
-                  <td className="p-3 rowSpan="2">
-                    <span className="text-xs text-[#B4BECC]">Carência: 24m</span><br/>
-                    <span className="text-xs text-white font-bold">Total: 96m</span>
-                  </td>
+                  <td className="p-3">Carência: 24m / Total: 96m</td>
                 </tr>
                 <tr>
                   <td className="p-3 font-semibold">Média I e II</td>
+                  <td className="p-3">Até R$ 15M</td>
                   <td className="p-3 font-bold text-amber-400">TR + 6,605% a.a.</td>
+                  <td className="p-3">Carência: 24m / Total: 96m</td>
                 </tr>
               </tbody>
             </table>
