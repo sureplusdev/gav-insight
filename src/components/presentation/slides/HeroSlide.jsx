@@ -21,6 +21,19 @@ export default function HeroSlide({ onNext }) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 0.8 }}
+          className="mb-8"
+        >
+          <img 
+            src="https://iili.io/KlAINkX.md.png" 
+            alt="Sure Plus Logo" 
+            className="h-16 mx-auto"
+          />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
           className="mb-6"
         >
