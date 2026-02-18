@@ -4,10 +4,8 @@ import SlideContainer from "@/components/presentation/SlideContainer";
 import SlideNav from "@/components/presentation/SlideNav";
 import GlossaryModal from "@/components/presentation/GlossaryModal";
 import BackgroundAnimation from "@/components/presentation/BackgroundAnimation";
-import FomentoContextoSlide from "@/components/presentation/slides/FomentoContextoSlide";
-import FinepFndctSlide from "@/components/presentation/slides/FinepFndctSlide";
+import IntroSlide from "@/components/presentation/slides/IntroSlide";
 import InovacredSlide from "@/components/presentation/slides/InovacredSlide";
-import HeroSlide from "@/components/presentation/slides/HeroSlide";
 import ProblemSlide from "@/components/presentation/slides/ProblemSlide";
 import SolutionSlide from "@/components/presentation/slides/SolutionSlide";
 import SimulatorSlide from "@/components/presentation/slides/SimulatorSlide";
@@ -20,7 +18,7 @@ import SurePlusCreditSlide from "@/components/presentation/slides/SurePlusCredit
 import SurePlusGrantsSlide from "@/components/presentation/slides/SurePlusGrantsSlide";
 import CTASlide from "@/components/presentation/slides/CTASlide";
 
-const TOTAL_SLIDES = 15;
+const TOTAL_SLIDES = 13;
 
 export default function Presentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
