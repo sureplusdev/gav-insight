@@ -12,7 +12,9 @@ import OnePageSlide from "@/components/presentation/slides/OnePageSlide";
 import DashboardSlide from "@/components/presentation/slides/DashboardSlide";
 import RoadmapSlide from "@/components/presentation/slides/RoadmapSlide";
 import CaseSlide from "@/components/presentation/slides/CaseSlide";
-import SurePlusSlide from "@/components/presentation/slides/SurePlusSlide";
+import SurePlusAboutSlide from "@/components/presentation/slides/SurePlusAboutSlide";
+import SurePlusCreditSlide from "@/components/presentation/slides/SurePlusCreditSlide";
+import SurePlusGrantsSlide from "@/components/presentation/slides/SurePlusGrantsSlide";
 import CTASlide from "@/components/presentation/slides/CTASlide";
 
 const TOTAL_SLIDES = 12;
