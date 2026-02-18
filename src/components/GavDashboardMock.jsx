@@ -174,7 +174,7 @@ export default function GavDashboardMock() {
   }), [filtered]);
 
   return (
-    <div className="w-full bg-gradient-to-b from-slate-950 to-slate-900 p-6 rounded-2xl border border-cyan-900/30">
+    <div className="w-full bg-gradient-to-b from-slate-700 to-slate-600 p-6 rounded-2xl border border-cyan-900/30">
       {/* Header + Reset Button */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
         <div>
