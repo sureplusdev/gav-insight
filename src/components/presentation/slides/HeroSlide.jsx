@@ -22,12 +22,12 @@ export default function HeroSlide({ onNext }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.8 }}
-          className="mb-8"
+          className="mb-12"
         >
           <img 
             src="https://iili.io/KlAINkX.md.png" 
             alt="Sure Plus Logo" 
-            className="h-16 mx-auto"
+            className="h-48 md:h-56 mx-auto drop-shadow-lg"
           />
         </motion.div>
 
