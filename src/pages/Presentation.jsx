@@ -73,8 +73,10 @@ export default function Presentation() {
     <DashboardSlide key={5} />,
     <RoadmapSlide key={6} />,
     <CaseSlide key={7} />,
-    <SurePlusSlide key={8} />,
-    <CTASlide key={9} />,
+    <SurePlusAboutSlide key={8} />,
+    <SurePlusCreditSlide key={9} />,
+    <SurePlusGrantsSlide key={10} />,
+    <CTASlide key={11} />,
   ];
 
   return (
