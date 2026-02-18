@@ -88,7 +88,7 @@ export default function ArchitectureSlide() {
             >
               <div className="flex-shrink-0 flex items-center gap-4">
                 <span className="text-white/8 text-3xl font-black">{i}</span>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: "rgba(49, 192, 218, 0.1)" }}>
                   <l.icon className="w-5 h-5" style={{ color: l.accentColor }} />
                 </div>
               </div>
