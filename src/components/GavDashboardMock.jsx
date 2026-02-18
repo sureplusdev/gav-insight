@@ -340,14 +340,14 @@ export default function GavDashboardMock() {
                     <div className="space-y-4">
                       {/* ENDV Comparison */}
                       <div className="grid grid-cols-2 gap-3">
-                        <div className="p-3 rounded bg-white/5">
-                          <p className="text-white/50 text-xs mb-1">Base</p>
+                        <div className="p-3 rounded bg-gray-100">
+                          <p className="text-gray-600 text-xs mb-1">Base</p>
                           <p className="font-bold text-lg" style={{ color: "#31C0DA" }}>
                             R$ {(startup.endvBase / 1000000).toFixed(1)}M
                           </p>
                         </div>
-                        <div className="p-3 rounded bg-white/5">
-                          <p className="text-white/50 text-xs mb-1">Ajustado</p>
+                        <div className="p-3 rounded bg-gray-100">
+                          <p className="text-gray-600 text-xs mb-1">Ajustado</p>
                           <p className="font-bold text-lg" style={{ color: "#31C0DA" }}>
                             R$ {(startup.endvAjustado / 1000000).toFixed(1)}M
                           </p>
@@ -356,7 +356,7 @@ export default function GavDashboardMock() {
 
                       {/* Gates */}
                       <div>
-                        <p className="text-white/60 text-xs font-semibold mb-2">Gates</p>
+                        <p className="text-gray-700 text-xs font-semibold mb-2">Gates</p>
                         <div className="flex gap-2 flex-wrap">
                           {Object.entries(startup.gates).map(([k, v]) => (
                             <Badge
