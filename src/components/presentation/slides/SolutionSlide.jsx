@@ -10,10 +10,10 @@ const PILLARS = [
 ];
 
 const NOT_IS = [
+  { is: true, text: "Número auditável + plano de 90 dias" },
+  { is: true, text: "Ferramenta prática que o time usa todo dia" },
   { is: false, text: "Promessa de aprovação" },
-  { is: false, text: "Pitch bonito ou planilha de opinião" },
-  { is: true, text: "Sistema que obriga evidência e expõe condicionais" },
-  { is: true, text: "Números auditáveis para decisão de comitê" },
+  { is: false, text: "Planilha de opinião" },
 ];
 
 export default function SolutionSlide() {
