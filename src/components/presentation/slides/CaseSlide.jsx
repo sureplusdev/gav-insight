@@ -140,18 +140,18 @@ export default function CaseSlide() {
                 <TrendingUp className="w-4 h-4" style={{ color: "#31C0DA" }} />
                 <span className="text-white/50 text-xs font-semibold uppercase tracking-wider">Resultado esperado</span>
               </div>
-              <ul className="space-y-1.5">
+              <ul className="space-y-2">
                 <li className="text-white/40 text-sm flex items-start gap-2">
                     <ArrowRight className="w-3 h-3 mt-1 flex-shrink-0" style={{ color: "#31C0DA" }} />
-                    Readiness sobe — D3/D5 viram evidência real
+                    ENDV: R$ 800k → R$ 4,2 milhões (+425%)
                   </li>
                   <li className="text-white/40 text-sm flex items-start gap-2">
                     <ArrowRight className="w-3 h-3 mt-1 flex-shrink-0" style={{ color: "#31C0DA" }} />
-                    ENDV sobe — por P(12m) e teto defendável
+                    Top 2 rotas definidas e em execução
                   </li>
                   <li className="text-white/40 text-sm flex items-start gap-2">
                     <ArrowRight className="w-3 h-3 mt-1 flex-shrink-0" style={{ color: "#31C0DA" }} />
-                    Fundo economiza tempo — pipeline com dono e prazo
+                    Fundo economiza 60-70% do tempo em empresas zumbis
                   </li>
               </ul>
             </div>
