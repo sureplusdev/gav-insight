@@ -18,7 +18,7 @@ const PHASES = [
 
 export default function CTASlide() {
   return (
-    <div className="min-h-screen flex items-center bg-slate-950 py-20 px-6">
+    <div className="min-h-screen flex items-center bg-brand-900 py-20 px-6">
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -26,7 +26,7 @@ export default function CTASlide() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <span className="text-emerald-400/60 text-xs font-semibold tracking-[0.2em] uppercase">
+          <span className="text-brand-500/60 text-xs font-semibold tracking-[0.2em] uppercase">
             Próximos Passos
           </span>
           <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
@@ -47,7 +47,7 @@ export default function CTASlide() {
               <div className="text-white/5 text-5xl font-black absolute top-3 right-4">
                 {i + 1}
               </div>
-              <span className="text-emerald-400 text-xs font-bold">{p.phase}</span>
+              <span className="text-brand-500 text-xs font-bold">{p.phase}</span>
               <h4 className="mt-2 text-white font-semibold">{p.title}</h4>
               <p className="mt-1.5 text-white/30 text-sm">{p.desc}</p>
               <div className="mt-3 inline-flex px-2 py-0.5 rounded bg-white/5 text-white/20 text-xs font-mono">
@@ -93,7 +93,7 @@ export default function CTASlide() {
               Comece com um lote piloto e veja o resultado em 30 dias.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <button className="group flex items-center gap-2 px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-emerald-500/25">
+              <button className="group flex items-center gap-2 px-8 py-4 bg-brand-500 hover:bg-brand-400 text-white font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-brand-500/25">
                 Agendar Kickoff
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </button>

@@ -7,29 +7,29 @@ const CONCEPTS = [
     icon: TrendingUp,
     label: "Ceiling_r",
     desc: "Teto viável captável (R$) na rota r — não é sonho, é teto realista baseado em evidência.",
-    accent: "text-emerald-400",
-    bg: "bg-emerald-500/10"
+    accent: "text-brand-500",
+    bg: "bg-brand-500/10"
   },
   {
     icon: Clock,
     label: "TTC (Time-to-Cash)",
     desc: "Fator temporal explícito: 1.0 / 0.8 / 0.6 / 0.4 conforme latência do instrumento.",
-    accent: "text-blue-400",
-    bg: "bg-blue-500/10"
+    accent: "text-brand-400",
+    bg: "bg-brand-400/10"
   },
   {
     icon: Focus,
     label: "Top2 (Foco)",
     desc: "Regra: no máximo 2 rotas com fator 1.0. Demais recebem penalidade de 0.4.",
-    accent: "text-amber-400",
-    bg: "bg-amber-500/10"
+    accent: "text-brand-300",
+    bg: "bg-brand-300/10"
   },
   {
     icon: ArrowRightLeft,
     label: "Base vs Ajustado",
     desc: "Sempre lado a lado — evidencia o custo real do autoengano e do gap de execução.",
-    accent: "text-purple-400",
-    bg: "bg-purple-500/10"
+    accent: "text-brand-400",
+    bg: "bg-brand-400/10"
   }
 ];
 
@@ -41,19 +41,19 @@ const ROUTES = [
 
 export default function EVMotorSlide() {
   return (
-    <div className="min-h-screen flex items-center bg-slate-950 py-20 px-6">
+    <div className="min-h-screen flex items-center bg-brand-900 py-20 px-6">
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-amber-400/60 text-xs font-semibold tracking-[0.2em] uppercase">
+          <span className="text-brand-500/60 text-xs font-semibold tracking-[0.2em] uppercase">
             Motor Econômico
           </span>
           <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
             De score para<br />
-            <span className="bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-500 to-brand-400 bg-clip-text text-transparent">
               R$ provável em 12 meses.
             </span>
           </h2>
@@ -64,11 +64,11 @@ export default function EVMotorSlide() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="mt-10 p-6 rounded-2xl bg-gradient-to-r from-amber-500/5 to-emerald-500/5 border border-amber-500/10"
+          className="mt-10 p-6 rounded-2xl bg-gradient-to-r from-brand-500/5 to-brand-400/5 border border-brand-500/10"
         >
           <p className="text-white/30 text-xs font-semibold tracking-wider uppercase mb-4">Fórmula Central</p>
           <div className="flex flex-wrap items-center gap-2 text-sm md:text-base">
-            <span className="px-3 py-1.5 rounded-lg bg-amber-500/10 text-amber-400 font-mono font-bold">EV_r</span>
+            <span className="px-3 py-1.5 rounded-lg bg-brand-500/10 text-brand-500 font-mono font-bold">EV_r</span>
             <span className="text-white/20">=</span>
             <span className="px-3 py-1.5 rounded-lg bg-white/5 text-white/60 font-mono">Ceiling_r</span>
             <span className="text-white/20">×</span>

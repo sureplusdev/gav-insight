@@ -17,14 +17,14 @@ export default function SimulatorSlide() {
   }, [ceiling, evidence, execution]);
 
   return (
-    <div className="min-h-screen flex items-center bg-slate-950 py-20 px-6">
+    <div className="min-h-screen flex items-center bg-brand-900 py-20 px-6">
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-emerald-400/60 text-xs font-semibold tracking-[0.2em] uppercase">
+          <span className="text-brand-500/60 text-xs font-semibold tracking-[0.2em] uppercase">
             Motor Econômico
           </span>
           <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
@@ -53,7 +53,7 @@ export default function SimulatorSlide() {
                 step="500000"
                 value={ceiling}
                 onChange={(e) => setCeiling(parseInt(e.target.value))}
-                className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer accent-emerald-400"
+                className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer accent-brand-500"
               />
               <motion.div
                 key={ceiling}
@@ -74,16 +74,16 @@ export default function SimulatorSlide() {
               <div className="grid grid-cols-4 gap-2">
                 {[
                   { level: 0, label: "E0", desc: "Nulo", color: "from-red-500" },
-                  { level: 1, label: "E1", desc: "Fraco", color: "from-orange-500" },
-                  { level: 2, label: "E2", desc: "Sólido", color: "from-amber-500" },
-                  { level: 3, label: "E3", desc: "Auditado", color: "from-emerald-500" }
+                  { level: 1, label: "E1", desc: "Fraco", color: "from-brand-400" },
+                  { level: 2, label: "E2", desc: "Sólido", color: "from-brand-300" },
+                  { level: 3, label: "E3", desc: "Auditado", color: "from-brand-500" }
                 ].map((e) => (
                   <button
                     key={e.level}
                     onClick={() => setEvidence(e.level)}
                     className={`p-3 rounded-lg transition-all text-center transform ${
                       evidence === e.level
-                        ? `bg-gradient-to-br ${e.color} to-white/10 border border-white/30 scale-110 shadow-lg`
+                        ? `bg-gradient-to-br ${e.color} to-white/10 border border-brand-500/30 scale-110 shadow-lg`
                         : "bg-white/5 border border-white/10 hover:border-white/20"
                     }`}
                   >
@@ -109,7 +109,7 @@ export default function SimulatorSlide() {
                 step="0.1"
                 value={execution}
                 onChange={(e) => setExecution(parseFloat(e.target.value))}
-                className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer accent-blue-400"
+                className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer accent-brand-500"
               />
               <motion.div
                 key={execution}
@@ -134,7 +134,7 @@ export default function SimulatorSlide() {
           >
             {/* Main Output */}
             <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-500/10 via-slate-900 to-blue-500/10 border border-emerald-500/20 p-8 flex-1 flex flex-col justify-center">
-              <div className="absolute top-0 right-0 opacity-5 text-emerald-400">
+              <div className="absolute top-0 right-0 opacity-5 text-brand-500">
                 <Calculator className="w-40 h-40" />
               </div>
               <div className="relative z-10">
@@ -147,11 +147,11 @@ export default function SimulatorSlide() {
                   animate={{ scale: 1, opacity: 1 }}
                   className="text-6xl md:text-7xl font-black text-white mb-3 tracking-tighter"
                 >
-                  <span className="text-emerald-400">R$</span>{" "}
+                  <span className="text-brand-500">R$</span>{" "}
                   {(endv / 1000000).toFixed(2)}
                   <span className="text-white/30 text-4xl">M</span>
                 </motion.div>
-                <p className="text-emerald-400/60 text-sm">
+                <p className="text-brand-500/60 text-sm">
                   ENDV = Ceiling × Probabilidade × F_execução
                 </p>
               </div>

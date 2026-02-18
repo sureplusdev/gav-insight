@@ -57,14 +57,14 @@ const LAYERS = [
 
 export default function ArchitectureSlide() {
   return (
-    <div className="min-h-screen flex items-center bg-slate-950 py-20 px-6">
+    <div className="min-h-screen flex items-center bg-brand-900 py-20 px-6">
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-emerald-400/60 text-xs font-semibold tracking-[0.2em] uppercase">
+          <span className="text-brand-500/60 text-xs font-semibold tracking-[0.2em] uppercase">
             Arquitetura
           </span>
           <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">

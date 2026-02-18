@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { Filter, BarChart3, Target, Zap, X, Check } from "lucide-react";
 
 const PILLARS = [
-  { icon: Filter, label: "Triagem", desc: "Gates eliminatórios (G1–G3) cortam casos mortos antes de pontuar", color: "emerald" },
-  { icon: BarChart3, label: "Scoring com Evidência", desc: "Dimensões D1–D6 com evidência E0–E3 — nota alta sem prova não passa", color: "emerald" },
-  { icon: Target, label: "Roteamento", desc: "Grant, Crédito ou CPSI — a rota certa para cada perfil", color: "emerald" },
-  { icon: Zap, label: "Motor Econômico", desc: "Ceiling + EV realista em 12 meses = número auditável para decisão", color: "amber" },
+{ icon: Filter, label: "Triagem", desc: "Gates eliminatórios (G1–G3) cortam casos mortos antes de pontuar", color: "brand" },
+{ icon: BarChart3, label: "Scoring com Evidência", desc: "Dimensões D1–D6 com evidência E0–E3 — nota alta sem prova não passa", color: "brand" },
+{ icon: Target, label: "Roteamento", desc: "Grant, Crédito ou CPSI — a rota certa para cada perfil", color: "brand" },
+{ icon: Zap, label: "Motor Econômico", desc: "Ceiling + EV realista em 12 meses = número auditável para decisão", color: "brand" },
 ];
 
 const NOT_IS = [
@@ -18,19 +18,19 @@ const NOT_IS = [
 
 export default function SolutionSlide() {
   return (
-    <div className="min-h-screen flex items-center bg-slate-950 py-20 px-6">
+    <div className="min-h-screen flex items-center bg-brand-900 py-20 px-6">
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-emerald-400/60 text-xs font-semibold tracking-[0.2em] uppercase">
+          <span className="text-brand-500/60 text-xs font-semibold tracking-[0.2em] uppercase">
             A Solução
           </span>
           <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
             GAV transforma incerteza<br />
-            <span className="bg-gradient-to-r from-emerald-400 to-amber-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-500 to-brand-400 bg-clip-text text-transparent">
               em decisão defensável.
             </span>
           </h2>

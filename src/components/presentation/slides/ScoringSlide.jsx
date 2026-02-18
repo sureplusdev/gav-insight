@@ -28,14 +28,14 @@ export default function ScoringSlide() {
   const [activeTab, setActiveTab] = useState("gf");
 
   return (
-    <div className="min-h-screen flex items-center bg-slate-950 py-20 px-6">
+    <div className="min-h-screen flex items-center bg-brand-900 py-20 px-6">
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-emerald-400/60 text-xs font-semibold tracking-[0.2em] uppercase">
+          <span className="text-brand-500/60 text-xs font-semibold tracking-[0.2em] uppercase">
             Scoring
           </span>
           <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
@@ -57,7 +57,7 @@ export default function ScoringSlide() {
           <button
             onClick={() => setActiveTab("gf")}
             className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-              activeTab === "gf" ? "bg-emerald-500 text-slate-950" : "text-white/50 hover:text-white/80"
+              activeTab === "gf" ? "bg-brand-500 text-white" : "text-white/50 hover:text-white/80"
             }`}
           >
             Grant Fit
@@ -65,7 +65,7 @@ export default function ScoringSlide() {
           <button
             onClick={() => setActiveTab("er")}
             className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-              activeTab === "er" ? "bg-blue-500 text-slate-950" : "text-white/50 hover:text-white/80"
+              activeTab === "er" ? "bg-brand-400 text-white" : "text-white/50 hover:text-white/80"
             }`}
           >
             Execution Readiness
@@ -87,7 +87,7 @@ export default function ScoringSlide() {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
                     <span className="text-white/70 text-sm font-medium">{d.label}</span>
-                    <span className={`text-sm font-bold ${activeTab === "gf" ? "text-emerald-400" : "text-blue-400"}`}>
+                    <span className={`text-sm font-bold ${activeTab === "gf" ? "text-brand-500" : "text-brand-400"}`}>
                       {w}%
                     </span>
                   </div>
@@ -96,7 +96,7 @@ export default function ScoringSlide() {
                       initial={{ width: 0 }}
                       animate={{ width: `${w}%` }}
                       transition={{ delay: 0.5 + i * 0.05, duration: 0.8, ease: "easeOut" }}
-                      className={`h-full rounded-full ${activeTab === "gf" ? "bg-emerald-500" : "bg-blue-500"}`}
+                      className={`h-full rounded-full ${activeTab === "gf" ? "bg-brand-500" : "bg-brand-400"}`}
                     />
                   </div>
                   <p className="mt-1 text-white/20 text-xs">{d.desc}</p>
@@ -120,7 +120,7 @@ export default function ScoringSlide() {
             <div className="space-y-3">
               {EVIDENCE.map((e) => (
                 <div key={e.level} className="flex items-center gap-3">
-                  <div className={`w-2 h-2 rounded-full ${e.color}`} />
+                  <div className={`w-2 h-2 rounded-full ${e.color === "bg-emerald-500" ? "bg-brand-500" : e.color}`} />
                   <span className="text-white/60 text-sm font-mono w-6">{e.level}</span>
                   <span className="text-white/40 text-sm flex-1">{e.label}</span>
                   <span className="text-white/20 text-xs">cap {e.cap}</span>

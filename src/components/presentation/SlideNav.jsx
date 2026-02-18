@@ -19,7 +19,7 @@ const SLIDE_LABELS = [
 export default function SlideNav({ current, total, onPrev, onNext }) {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50">
-      <div className="bg-slate-900/80 backdrop-blur-xl border-t border-white/5">
+      <div className="bg-brand-900/80 backdrop-blur-xl border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           <button
             onClick={onPrev}
@@ -35,9 +35,9 @@ export default function SlideNav({ current, total, onPrev, onNext }) {
                 key={i}
                 className={`rounded-full transition-all duration-300 cursor-pointer ${
                   i === current
-                    ? "bg-emerald-400 w-8 h-2"
+                    ? "bg-brand-500 w-8 h-2"
                     : "bg-white/20 hover:bg-white/40 w-2 h-2"
-                }`}
+                  }`}
                 layoutId={i === current ? "active-dot" : undefined}
               />
             ))}
