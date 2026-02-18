@@ -11,18 +11,18 @@ const DIMENSIONS = [
 ];
 
 const EVIDENCE = [
-  { level: "E0", label: "Sem evidência", cap: 2, color: "bg-red-500", desc: "Nota máxima travada em 2" },
-  { level: "E1", label: "Evidência fraca", cap: 3, color: "bg-orange-500", desc: "Declaração ou intenção" },
-  { level: "E2", label: "Documental", cap: 4, color: "bg-amber-500", desc: "Contratos, balanço, registros" },
-  { level: "E3", label: "Externa/terceiro", cap: 5, color: "bg-emerald-500", desc: "Auditoria, certificação, laudo" },
-];
+   { level: "E0", label: "Sem evidência", cap: 2, color: "#31C0DA", desc: "Nota máxima travada em 2" },
+   { level: "E1", label: "Evidência fraca", cap: 3, color: "#31C0DA", desc: "Declaração ou intenção" },
+   { level: "E2", label: "Documental", cap: 4, color: "#31C0DA", desc: "Contratos, balanço, registros" },
+   { level: "E3", label: "Externa/terceiro", cap: 5, color: "#31C0DA", desc: "Auditoria, certificação, laudo" },
+ ];
 
-const TIERS = [
-  { tier: "A", range: "80–100", color: "bg-emerald-500", text: "text-emerald-400" },
-  { tier: "B", range: "65–79", color: "bg-blue-500", text: "text-blue-400" },
-  { tier: "C", range: "50–64", color: "bg-amber-500", text: "text-amber-400" },
-  { tier: "D", range: "0–49", color: "bg-red-500", text: "text-red-400" },
-];
+ const TIERS = [
+   { tier: "A", range: "80–100", color: "#31C0DA" },
+   { tier: "B", range: "65–79", color: "#31C0DA" },
+   { tier: "C", range: "50–64", color: "#31C0DA" },
+   { tier: "D", range: "0–49", color: "#31C0DA" },
+ ];
 
 export default function ScoringSlide() {
   const [activeTab, setActiveTab] = useState("gf");
@@ -39,11 +39,16 @@ export default function ScoringSlide() {
             Scoring
           </span>
           <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
-            Dois scores,{" "}
-            <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
-              uma verdade.
-            </span>
-          </h2>
+             Dois scores,{" "}
+             <span style={{ 
+               backgroundImage: "linear-gradient(to right, #31C0DA, #2C8FAE)",
+               backgroundClip: "text",
+               WebkitBackgroundClip: "text",
+               color: "transparent"
+             }}>
+               uma verdade.
+             </span>
+           </h2>
           <p className="mt-3 text-white/35 text-sm">"Fazer sentido para fomento" e "conseguir capturar em 12 meses" são variáveis distintas.</p>
         </motion.div>
 
@@ -56,17 +61,21 @@ export default function ScoringSlide() {
         >
           <button
             onClick={() => setActiveTab("gf")}
-            className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-              activeTab === "gf" ? "bg-brand-500 text-white" : "text-white/50 hover:text-white/80"
-            }`}
+            className="px-5 py-2 rounded-full text-sm font-medium transition-all text-white"
+            style={{ 
+              backgroundColor: activeTab === "gf" ? "#31C0DA" : "transparent",
+              color: activeTab === "gf" ? "white" : "rgba(255, 255, 255, 0.5)"
+            }}
           >
             Grant Fit
           </button>
           <button
             onClick={() => setActiveTab("er")}
-            className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-              activeTab === "er" ? "bg-brand-400 text-white" : "text-white/50 hover:text-white/80"
-            }`}
+            className="px-5 py-2 rounded-full text-sm font-medium transition-all"
+            style={{ 
+              backgroundColor: activeTab === "er" ? "#31C0DA" : "transparent",
+              color: activeTab === "er" ? "white" : "rgba(255, 255, 255, 0.5)"
+            }}
           >
             Execution Readiness
           </button>
@@ -87,16 +96,16 @@ export default function ScoringSlide() {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
                     <span className="text-white/70 text-sm font-medium">{d.label}</span>
-                    <span className={`text-sm font-bold ${activeTab === "gf" ? "text-brand-500" : "text-brand-400"}`}>
-                      {w}%
-                    </span>
+                    <span className="text-sm font-bold" style={{ color: "#31C0DA" }}>
+                       {w}%
+                     </span>
                   </div>
                   <div className="mt-1.5 w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${w}%` }}
                       transition={{ delay: 0.5 + i * 0.05, duration: 0.8, ease: "easeOut" }}
-                      className={`h-full rounded-full ${activeTab === "gf" ? "bg-brand-500" : "bg-brand-400"}`}
+                      className="h-full rounded-full" style={{ backgroundColor: "#31C0DA" }}
                     />
                   </div>
                   <p className="mt-1 text-white/20 text-xs">{d.desc}</p>
@@ -120,7 +129,7 @@ export default function ScoringSlide() {
             <div className="space-y-3">
               {EVIDENCE.map((e) => (
                 <div key={e.level} className="flex items-center gap-3">
-                  <div className={`w-2 h-2 rounded-full ${e.color === "bg-emerald-500" ? "bg-brand-500" : e.color}`} />
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: e.color }} />
                   <span className="text-white/60 text-sm font-mono w-6">{e.level}</span>
                   <span className="text-white/40 text-sm flex-1">{e.label}</span>
                   <span className="text-white/20 text-xs">cap {e.cap}</span>
@@ -141,8 +150,8 @@ export default function ScoringSlide() {
             <div className="space-y-3">
               {TIERS.map((t) => (
                 <div key={t.tier} className="flex items-center gap-3">
-                  <div className={`w-8 h-8 rounded-lg ${t.color}/10 flex items-center justify-center`}>
-                    <span className={`text-sm font-bold ${t.text}`}>{t.tier}</span>
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(49, 192, 218, 0.1)" }}>
+                    <span className="text-sm font-bold" style={{ color: t.color }}>{t.tier}</span>
                   </div>
                   <span className="text-white/40 text-sm font-mono">{t.range}</span>
                 </div>
