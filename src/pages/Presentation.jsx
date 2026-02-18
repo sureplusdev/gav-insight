@@ -66,9 +66,11 @@ export default function Presentation() {
     <ArchitectureSlide key={3} />,
     <ScoringSlide key={4} />,
     <EVMotorSlide key={5} />,
-    <DeliverablesSlide key={6} />,
-    <CaseSlide key={7} />,
-    <CTASlide key={8} />,
+    <SimulatorSlide key={6} />,
+    <RoadmapSlide key={7} />,
+    <DashboardSlide key={8} />,
+    <CaseSlide key={9} />,
+    <CTASlide key={10} />,
   ];
 
   return (
