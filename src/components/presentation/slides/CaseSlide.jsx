@@ -73,18 +73,16 @@ export default function CaseSlide() {
               ))}
             </div>
 
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-white/30 text-xs">Grant Fit (Base)</span>
-                <span className="text-white/60 text-sm font-bold">68 <span className="text-blue-400 text-xs font-normal">Tier B</span></span>
+            <div className="space-y-3">
+              <div className="border-t border-white/10 pt-3">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-white/50 text-xs font-medium">ENDV (Antes)</span>
+                  <span className="text-white/40 text-sm">R$ 800 mil</span>
+                </div>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-white/30 text-xs">Execution Readiness</span>
-                <span className="text-white/60 text-sm font-bold">54 <span className="text-amber-400 text-xs font-normal">Tier C</span></span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-white/30 text-xs">Grant Fit (Ajustado)</span>
-                <span className="text-white/60 text-sm font-bold">72 <span className="text-emerald-400 text-xs font-normal">+VDF</span></span>
+                <span className="text-white/30 text-xs">Readiness Score</span>
+                <span className="text-white/60 text-sm font-bold">54 → <span style={{ color: "#31C0DA" }}>82</span></span>
               </div>
             </div>
 
