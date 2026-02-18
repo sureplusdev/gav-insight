@@ -378,7 +378,7 @@ export default function GavDashboardMock() {
 
                       {/* Heatmap D1-D6 */}
                       <div>
-                        <p className="text-white/60 text-xs font-semibold mb-3">
+                        <p className="text-gray-700 text-xs font-semibold mb-3">
                           Heatmap (D1–D6)
                         </p>
                         <div className="space-y-2">
