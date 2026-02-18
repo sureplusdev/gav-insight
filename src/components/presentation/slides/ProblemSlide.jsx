@@ -7,33 +7,33 @@ const PAIN_POINTS = [
   icon: Clock,
   title: "Tempo do time",
   desc: "Análise, calls, follow-up eterno em empresas que estão andando de lado.",
-  color: "text-red-400",
-  bg: "bg-red-500/10",
-  border: "border-red-500/20"
+  color: "#31C0DA",
+  bgColor: "rgba(49, 192, 218, 0.1)",
+  borderColor: "rgba(49, 192, 218, 0.2)"
 },
 {
   icon: AlertTriangle,
   title: "Reputação do fundo",
   desc: "Submissões fracas, histórico ruim e ruído com parceiros estratégicos.",
-  color: "text-brand-400",
-  bg: "bg-brand-500/10",
-  border: "border-brand-500/20"
+  color: "#31C0DA",
+  bgColor: "rgba(49, 192, 218, 0.1)",
+  borderColor: "rgba(49, 192, 218, 0.2)"
 },
 {
   icon: TrendingDown,
   title: "Capital defensivo",
   desc: "Follow-on para apagar incêndio, sem critério reprodutível de decisão.",
-  color: "text-orange-400",
-  bg: "bg-orange-500/10",
-  border: "border-orange-500/20"
+  color: "#31C0DA",
+  bgColor: "rgba(49, 192, 218, 0.1)",
+  borderColor: "rgba(49, 192, 218, 0.2)"
 },
 {
   icon: Flame,
   title: "Energia do founder",
   desc: "Tentativas paralelas sem foco — muitas frentes, zero captura efetiva.",
-  color: "text-rose-400",
-  bg: "bg-rose-500/10",
-  border: "border-rose-500/20"
+  color: "#31C0DA",
+  bgColor: "rgba(49, 192, 218, 0.1)",
+  borderColor: "rgba(49, 192, 218, 0.2)"
 }
 ];
 
@@ -75,11 +75,12 @@ export default function ProblemSlide() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 + i * 0.15, duration: 0.5 }}
-              className={`group p-6 rounded-2xl border ${item.border} ${item.bg} backdrop-blur-sm hover:scale-[1.02] transition-all duration-300`}
+              className="group p-6 rounded-2xl border backdrop-blur-sm hover:scale-[1.02] transition-all duration-300"
+              style={{ borderColor: item.borderColor, backgroundColor: item.bgColor }}
             >
               <div className="flex items-start gap-4">
-                <div className={`p-2.5 rounded-xl ${item.bg}`}>
-                  <item.icon className={`w-5 h-5 ${item.color}`} />
+                <div className="p-2.5 rounded-xl" style={{ backgroundColor: item.bgColor }}>
+                  <item.icon className="w-5 h-5" style={{ color: item.color }} />
                 </div>
                 <div>
                   <h3 className="text-white font-semibold text-lg">{item.title}</h3>
@@ -94,7 +95,11 @@ export default function ProblemSlide() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="mt-14 p-6 rounded-2xl bg-gradient-to-r from-red-500/5 to-transparent border border-red-500/10"
+          className="mt-14 p-6 rounded-2xl border"
+          style={{ 
+            background: "linear-gradient(to right, rgba(49, 192, 218, 0.05), transparent)",
+            borderColor: "rgba(49, 192, 218, 0.1)"
+          }}
         >
           <p className="text-white/60 text-sm md:text-base leading-relaxed italic">
             "Uma startup pode ser boa e ainda assim não capturar recursos em 12 meses — 
