@@ -30,7 +30,12 @@ export default function SolutionSlide() {
           </span>
           <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
             GAV transforma incerteza<br />
-            <span className="bg-gradient-to-r from-brand-500 to-brand-400 bg-clip-text text-transparent">
+            <span style={{ 
+              backgroundImage: "linear-gradient(to right, #31C0DA, #2C8FAE)",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              color: "transparent"
+            }}>
               em decisão defensável.
             </span>
           </h2>
@@ -43,10 +48,14 @@ export default function SolutionSlide() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 + i * 0.12, duration: 0.5 }}
-              className="relative p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/20 transition-all duration-300 group"
+              className="relative p-5 rounded-2xl border transition-all duration-300 group"
+              style={{ 
+                backgroundColor: "rgba(255, 255, 255, 0.02)",
+                borderColor: "rgba(49, 192, 218, 0.2)"
+              }}
             >
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${p.color === "amber" ? "bg-amber-500/10" : "bg-emerald-500/10"}`}>
-                <p.icon className={`w-5 h-5 ${p.color === "amber" ? "text-amber-400" : "text-emerald-400"}`} />
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: "rgba(49, 192, 218, 0.1)" }}>
+                <p.icon className="w-5 h-5" style={{ color: "#31C0DA" }} />
               </div>
               <h3 className="mt-4 text-white font-semibold">{p.label}</h3>
               <p className="mt-2 text-white/35 text-sm leading-relaxed">{p.desc}</p>
@@ -68,12 +77,12 @@ export default function SolutionSlide() {
             {NOT_IS.map((item, i) => (
               <div key={i} className="flex items-center gap-3">
                 {item.is ? (
-                  <div className="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "rgba(49, 192, 218, 0.1)" }}>
+                    <Check className="w-3.5 h-3.5" style={{ color: "#31C0DA" }} />
                   </div>
-                ) : (
-                  <div className="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center flex-shrink-0">
-                    <X className="w-3.5 h-3.5 text-red-400" />
+                  ) : (
+                  <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "rgba(255, 255, 255, 0.05)" }}>
+                    <X className="w-3.5 h-3.5" style={{ color: "rgba(255, 255, 255, 0.3)" }} />
                   </div>
                 )}
                 <span className={`text-sm ${item.is ? "text-white/60" : "text-white/30 line-through"}`}>
