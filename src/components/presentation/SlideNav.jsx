@@ -9,7 +9,9 @@ const SLIDE_LABELS = [
   "Arquitetura",
   "Scoring",
   "Motor EV",
-  "Entregáveis",
+  "Simulador",
+  "Roadmap",
+  "Dashboard",
   "Case",
   "Próximos Passos"
 ];
