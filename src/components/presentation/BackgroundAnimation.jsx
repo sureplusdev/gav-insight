@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function BackgroundAnimation() {
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: -1 }}>
       {/* Gradient base animado */}
       <motion.div
         initial={{ opacity: 0.8 }}
