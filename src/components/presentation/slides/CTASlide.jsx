@@ -18,7 +18,7 @@ const PHASES = [
 
 export default function CTASlide() {
   return (
-    <div className="min-h-screen flex items-center bg-brand-900 py-20 px-6">
+    <div className="min-h-screen flex items-center py-20 px-6" style={{ backgroundColor: "#193A62" }}>
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
