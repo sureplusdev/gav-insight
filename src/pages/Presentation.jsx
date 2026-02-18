@@ -65,15 +65,12 @@ export default function Presentation() {
     <HeroSlide key={0} onNext={goNext} />,
     <ProblemSlide key={1} />,
     <SolutionSlide key={2} />,
-    <ArchitectureSlide key={3} />,
-    <ScoringSlide key={4} />,
-    <EVMotorSlide key={5} />,
-    <SimulatorSlide key={6} />,
-    <RoadmapSlide key={7} />,
-    <DashboardSlide key={8} />,
-    <CaseSlide key={9} />,
-    <CTASlide key={10} />,
-    <DeliverablesSlide key={11} />,
+    <SimulatorSlide key={3} />,
+    <OnePageSlide key={4} />,
+    <DashboardSlide key={5} />,
+    <RoadmapSlide key={6} />,
+    <CaseSlide key={7} />,
+    <CTASlide key={8} />,
   ];
 
   return (
