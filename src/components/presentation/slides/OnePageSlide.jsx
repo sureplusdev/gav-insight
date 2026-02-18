@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, AlertCircle, TrendingUp } from "lucide-react";
+import { TrendingUp } from "lucide-react";
 
 export default function OnePageSlide() {
   const onePagerFields = [
