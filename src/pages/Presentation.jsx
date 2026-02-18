@@ -76,6 +76,7 @@ export default function Presentation() {
     <DashboardSlide key={8} />,
     <CaseSlide key={9} />,
     <CTASlide key={10} />,
+    <DeliverablesSlide key={11} />,
   ];
 
   return (
