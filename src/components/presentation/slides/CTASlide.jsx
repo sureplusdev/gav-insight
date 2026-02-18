@@ -26,7 +26,7 @@ export default function CTASlide() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <span className="text-brand-500/60 text-xs font-semibold tracking-[0.2em] uppercase">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "rgba(49, 192, 218, 0.6)" }}>
             Próximos Passos
           </span>
           <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
@@ -43,11 +43,14 @@ export default function CTASlide() {
           className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"
         >
           {PHASES.map((p, i) => (
-            <div key={i} className="relative p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/15 transition-all">
+            <div key={i} className="relative p-5 rounded-2xl border transition-all" style={{
+              backgroundColor: "rgba(255, 255, 255, 0.02)",
+              borderColor: "rgba(49, 192, 218, 0.15)"
+            }}>
               <div className="text-white/5 text-5xl font-black absolute top-3 right-4">
                 {i + 1}
               </div>
-              <span className="text-brand-500 text-xs font-bold">{p.phase}</span>
+              <span className="text-xs font-bold" style={{ color: "#31C0DA" }}>{p.phase}</span>
               <h4 className="mt-2 text-white font-semibold">{p.title}</h4>
               <p className="mt-1.5 text-white/30 text-sm">{p.desc}</p>
               <div className="mt-3 inline-flex px-2 py-0.5 rounded bg-white/5 text-white/20 text-xs font-mono">
@@ -65,9 +68,12 @@ export default function CTASlide() {
           className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3"
         >
           {VALUE_PROPS.map((v, i) => (
-            <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5">
-              <div className="p-2 rounded-lg bg-emerald-500/10 flex-shrink-0">
-                <v.icon className="w-4 h-4 text-emerald-400" />
+            <div key={i} className="flex items-start gap-4 p-4 rounded-xl border" style={{
+              backgroundColor: "rgba(255, 255, 255, 0.02)",
+              borderColor: "rgba(255, 255, 255, 0.05)"
+            }}>
+              <div className="p-2 rounded-lg flex-shrink-0" style={{ backgroundColor: "rgba(49, 192, 218, 0.1)" }}>
+                <v.icon className="w-4 h-4" style={{ color: "#31C0DA" }} />
               </div>
               <div>
                 <h4 className="text-white/70 font-medium text-sm">{v.label}</h4>
@@ -84,7 +90,10 @@ export default function CTASlide() {
           transition={{ delay: 0.9, duration: 0.6 }}
           className="mt-14 text-center"
         >
-          <div className="p-8 rounded-3xl bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-transparent border border-emerald-500/15">
+          <div className="p-8 rounded-3xl border" style={{
+            background: "linear-gradient(to bottom right, rgba(49, 192, 218, 0.1), rgba(49, 192, 218, 0.05), transparent)",
+            borderColor: "rgba(49, 192, 218, 0.15)"
+          }}>
             <h3 className="text-2xl md:text-3xl font-bold text-white">
               Pronto para destravar seu portfólio?
             </h3>
@@ -93,7 +102,10 @@ export default function CTASlide() {
               Comece com um lote piloto e veja o resultado em 30 dias.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <button className="group flex items-center gap-2 px-8 py-4 bg-brand-500 hover:bg-brand-400 text-white font-semibold rounded-full transition-all hover:shadow-lg hover:shadow-brand-500/25">
+              <button className="group flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-full transition-all" style={{ backgroundColor: "#31C0DA" }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = "#2C8FAE"}
+                onMouseLeave={(e) => e.target.style.backgroundColor = "#31C0DA"}
+              >
                 Agendar Kickoff
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </button>
