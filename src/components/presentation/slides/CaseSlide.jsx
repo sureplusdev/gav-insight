@@ -144,17 +144,17 @@ export default function CaseSlide() {
               </div>
               <ul className="space-y-1.5">
                 <li className="text-white/40 text-sm flex items-start gap-2">
-                  <ArrowRight className="w-3 h-3 text-emerald-400 mt-1 flex-shrink-0" />
-                  Readiness sobe — D3/D5 viram evidência real
-                </li>
-                <li className="text-white/40 text-sm flex items-start gap-2">
-                  <ArrowRight className="w-3 h-3 text-emerald-400 mt-1 flex-shrink-0" />
-                  ENDV sobe — por P(12m) e teto defendável
-                </li>
-                <li className="text-white/40 text-sm flex items-start gap-2">
-                  <ArrowRight className="w-3 h-3 text-emerald-400 mt-1 flex-shrink-0" />
-                  Fundo economiza tempo — pipeline com dono e prazo
-                </li>
+                    <ArrowRight className="w-3 h-3 mt-1 flex-shrink-0" style={{ color: "#31C0DA" }} />
+                    Readiness sobe — D3/D5 viram evidência real
+                  </li>
+                  <li className="text-white/40 text-sm flex items-start gap-2">
+                    <ArrowRight className="w-3 h-3 mt-1 flex-shrink-0" style={{ color: "#31C0DA" }} />
+                    ENDV sobe — por P(12m) e teto defendável
+                  </li>
+                  <li className="text-white/40 text-sm flex items-start gap-2">
+                    <ArrowRight className="w-3 h-3 mt-1 flex-shrink-0" style={{ color: "#31C0DA" }} />
+                    Fundo economiza tempo — pipeline com dono e prazo
+                  </li>
               </ul>
             </div>
           </motion.div>
