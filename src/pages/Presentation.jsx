@@ -79,6 +79,7 @@ export default function Presentation() {
 
   return (
     <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: "#193A62" }}>
+      <BackgroundAnimation />
       <SlideContainer slideIndex={currentSlide}>
         {slides[currentSlide]}
       </SlideContainer>
