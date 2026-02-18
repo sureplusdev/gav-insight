@@ -18,7 +18,7 @@ import SurePlusCreditSlide from "@/components/presentation/slides/SurePlusCredit
 import SurePlusGrantsSlide from "@/components/presentation/slides/SurePlusGrantsSlide";
 import CTASlide from "@/components/presentation/slides/CTASlide";
 
-const TOTAL_SLIDES = 15;
+const TOTAL_SLIDES = 13;
 
 export default function Presentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
