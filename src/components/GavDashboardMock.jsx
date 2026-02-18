@@ -16,6 +16,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
+import { Progress } from "@/components/ui/progress";
 import {
   Dialog,
   DialogContent,
@@ -24,24 +25,10 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
-import { Progress } from "@/components/ui/progress";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
-} from "recharts";
 import {
   RotateCw,
-  Filter,
   Search,
   TrendingUp,
-  AlertCircle,
 } from "lucide-react";
 
 const mockStartups = [
@@ -120,7 +107,6 @@ export default function GavDashboardMock() {
   const [onlyTop2, setOnlyTop2] = useState(false);
   const [selected, setSelected] = useState(null);
 
-  // ==================== RESET DEMO ====================
   const resetDemo = () => {
     setQ("");
     setTier("ALL");
@@ -129,7 +115,6 @@ export default function GavDashboardMock() {
     setOnlyTop2(false);
     setSelected(null);
   };
-  // ===================================================
 
   const verticals = useMemo(() => {
     const set = new Set(mockStartups.map((s) => s.verticalMacro));
@@ -166,35 +151,40 @@ export default function GavDashboardMock() {
 
   const kpis = useMemo(() => ({
     totalEndv: filtered.reduce((sum, s) => sum + s.endvAjustado, 0),
-    avgReadiness: Math.round(
+    avgReadiness: filtered.length > 0 ? Math.round(
       filtered.reduce((sum, s) => sum + s.readiness, 0) / filtered.length
-    ),
+    ) : 0,
     captura: filtered.filter((s) => s.status === "CAPTURA").length,
     condicional: filtered.filter((s) => s.status === "CONDICIONAL").length,
   }), [filtered]);
 
   return (
-    <div className="w-full bg-gradient-to-b from-slate-950 to-slate-900 p-6 rounded-2xl border border-cyan-900/30">
-      {/* Header + Reset Button */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+    <div className="min-h-[720px] w-full rounded-3xl overflow-hidden" 
+         style={{ backgroundColor: "#193A62", color: "white" }}>
+
+      {/* HEADER */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between px-8 pt-8 pb-6 border-b border-white/10 gap-4">
         <div>
-          <h2 className="text-2xl font-bold text-white mb-1">Dashboard GAV</h2>
-          <p className="text-sm text-white/50">ENDV • Base vs Ajustado • Top2 • Gates G1–G3</p>
+          <h2 className="text-3xl font-bold tracking-tight">Dashboard GAV</h2>
+          <p className="text-sm mt-1" style={{ color: "#31C0DA" }}>
+            ENDV em 12 meses • Base vs Ajustado • Top2 • Gates G1–G3
+          </p>
         </div>
-        <Button
+
+        <Button 
           onClick={resetDemo}
-          variant="outline"
-          className="gap-2 border-cyan-700 text-cyan-400 hover:bg-cyan-900/20"
+          className="w-full sm:w-auto text-white font-semibold"
+          style={{ backgroundColor: "#31C0DA" }}
+          onMouseEnter={(e) => e.target.style.backgroundColor = "#2C8FAE"}
+          onMouseLeave={(e) => e.target.style.backgroundColor = "#31C0DA"}
         >
-          <RotateCw className="h-4 w-4" />
+          <RotateCw className="mr-2 h-4 w-4" />
           Reset Demo
         </Button>
       </div>
 
-      <Separator className="bg-cyan-900/30 mb-6" />
-
-      {/* Filters */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-6">
+      {/* FILTERS */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 px-8 py-6 border-b border-white/10">
         <div className="flex items-center gap-2">
           <Search className="h-4 w-4 text-white/40" />
           <Input
@@ -249,181 +239,182 @@ export default function GavDashboardMock() {
         </div>
       </div>
 
-      {/* KPI Cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+      {/* KPI CARDS */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 px-8 py-6">
         <Card className="bg-white/5 border-white/10">
           <CardHeader className="pb-2">
-            <CardTitle className="text-xs text-white/60">ENDV Total</CardTitle>
+            <CardTitle className="text-xs text-white/70">ENDV Total</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-2xl font-bold text-cyan-400">
+            <div className="text-2xl font-bold" style={{ color: "#31C0DA" }}>
               R$ {(kpis.totalEndv / 1000000).toFixed(1)}M
-            </p>
+            </div>
           </CardContent>
         </Card>
 
         <Card className="bg-white/5 border-white/10">
           <CardHeader className="pb-2">
-            <CardTitle className="text-xs text-white/60">Readiness Méd</CardTitle>
+            <CardTitle className="text-xs text-white/70">Readiness Méd</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-2xl font-bold text-cyan-400">{kpis.avgReadiness}%</p>
+            <div className="text-2xl font-bold" style={{ color: "#31C0DA" }}>
+              {kpis.avgReadiness}%
+            </div>
           </CardContent>
         </Card>
 
         <Card className="bg-white/5 border-white/10">
           <CardHeader className="pb-2">
-            <CardTitle className="text-xs text-white/60">Captura</CardTitle>
+            <CardTitle className="text-xs text-white/70">Captura</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-2xl font-bold text-cyan-400">{kpis.captura}</p>
+            <div className="text-2xl font-bold" style={{ color: "#31C0DA" }}>
+              {kpis.captura}
+            </div>
           </CardContent>
         </Card>
 
         <Card className="bg-white/5 border-white/10">
           <CardHeader className="pb-2">
-            <CardTitle className="text-xs text-white/60">Condicional</CardTitle>
+            <CardTitle className="text-xs text-white/70">Condicional</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-2xl font-bold text-cyan-400">{kpis.condicional}</p>
+            <div className="text-2xl font-bold" style={{ color: "#31C0DA" }}>
+              {kpis.condicional}
+            </div>
           </CardContent>
         </Card>
       </div>
 
-      {/* Ranking Table */}
-      <Card className="bg-white/5 border-white/10 mb-6">
-        <CardHeader>
-          <CardTitle className="text-lg flex items-center gap-2">
-            <TrendingUp className="h-4 w-4 text-cyan-400" />
-            Ranking por ENDV
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-2">
-            {filtered.length === 0 ? (
-              <p className="text-white/50 text-sm">Nenhuma startup encontrada</p>
-            ) : (
-              filtered.map((startup, idx) => (
-                <Dialog key={startup.id}>
-                  <DialogTrigger asChild>
-                    <div
-                      onClick={() => setSelected(startup)}
-                      className="p-4 rounded-lg bg-white/[0.02] border border-white/10 hover:border-cyan-600/50 cursor-pointer transition-all"
-                    >
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-3">
-                          <span className="text-white/40 text-xs font-mono min-w-6">#{idx + 1}</span>
-                          <span className="text-white font-medium">{startup.name}</span>
-                          <Badge variant="outline" className="text-xs">
-                            {startup.tier}
-                          </Badge>
-                        </div>
-                        <span className="text-cyan-400 font-bold">
-                          R$ {(startup.endvAjustado / 1000000).toFixed(1)}M
-                        </span>
-                      </div>
+      {/* RANKING TABLE */}
+      <div className="px-8 py-6">
+        <div className="flex items-center gap-2 mb-4">
+          <TrendingUp className="h-5 w-5" style={{ color: "#31C0DA" }} />
+          <h3 className="text-lg font-semibold">Ranking por ENDV</h3>
+        </div>
 
+        <div className="space-y-2">
+          {filtered.length === 0 ? (
+            <p className="text-white/50 text-sm">Nenhuma startup encontrada</p>
+          ) : (
+            filtered.map((startup, idx) => (
+              <Dialog key={startup.id}>
+                <DialogTrigger asChild>
+                  <div
+                    onClick={() => setSelected(startup)}
+                    className="p-4 rounded-lg bg-white/[0.03] border border-white/10 hover:border-white/30 cursor-pointer transition-all"
+                  >
+                    <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-3">
-                        <div className="flex-1">
-                          <Progress
-                            value={startup.readiness}
-                            className="h-1.5 bg-white/10"
-                          />
-                        </div>
-                        <span className="text-white/40 text-xs min-w-10 text-right">
-                          {startup.readiness}%
-                        </span>
+                        <span className="text-white/40 text-xs font-mono min-w-6">#{idx + 1}</span>
+                        <span className="font-medium">{startup.name}</span>
+                        <Badge variant="outline" className="text-xs border-white/20 text-white/70">
+                          {startup.tier}
+                        </Badge>
                       </div>
+                      <span className="font-bold" style={{ color: "#31C0DA" }}>
+                        R$ {(startup.endvAjustado / 1000000).toFixed(1)}M
+                      </span>
                     </div>
-                  </DialogTrigger>
 
-                  {selected && selected.id === startup.id && (
-                    <DialogContent className="max-w-2xl bg-slate-950 border-white/10">
-                      <DialogHeader>
-                        <DialogTitle className="text-white text-xl">
-                          {startup.name} — Detalhes
-                        </DialogTitle>
-                      </DialogHeader>
+                    <div className="flex items-center gap-3">
+                      <div className="flex-1">
+                        <Progress
+                          value={startup.readiness}
+                          className="h-1.5"
+                        />
+                      </div>
+                      <span className="text-white/40 text-xs min-w-10 text-right">
+                        {startup.readiness}%
+                      </span>
+                    </div>
+                  </div>
+                </DialogTrigger>
 
-                      <div className="space-y-4">
-                        {/* ENDV Comparison */}
-                        <div className="grid grid-cols-2 gap-3">
-                          <div className="p-3 rounded bg-white/5">
-                            <p className="text-white/50 text-xs mb-1">Base</p>
-                            <p className="text-cyan-400 font-bold text-lg">
-                              R$ {(startup.endvBase / 1000000).toFixed(1)}M
-                            </p>
-                          </div>
-                          <div className="p-3 rounded bg-white/5">
-                            <p className="text-white/50 text-xs mb-1">Ajustado</p>
-                            <p className="text-cyan-400 font-bold text-lg">
-                              R$ {(startup.endvAjustado / 1000000).toFixed(1)}M
-                            </p>
-                          </div>
+                {selected && selected.id === startup.id && (
+                  <DialogContent className="max-w-2xl border-white/10" style={{ backgroundColor: "#193A62" }}>
+                    <DialogHeader>
+                      <DialogTitle className="text-xl">{startup.name} — Detalhes</DialogTitle>
+                    </DialogHeader>
+
+                    <div className="space-y-4">
+                      {/* ENDV Comparison */}
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="p-3 rounded bg-white/5">
+                          <p className="text-white/50 text-xs mb-1">Base</p>
+                          <p className="font-bold text-lg" style={{ color: "#31C0DA" }}>
+                            R$ {(startup.endvBase / 1000000).toFixed(1)}M
+                          </p>
                         </div>
+                        <div className="p-3 rounded bg-white/5">
+                          <p className="text-white/50 text-xs mb-1">Ajustado</p>
+                          <p className="font-bold text-lg" style={{ color: "#31C0DA" }}>
+                            R$ {(startup.endvAjustado / 1000000).toFixed(1)}M
+                          </p>
+                        </div>
+                      </div>
 
-                        {/* Gates */}
+                      {/* Gates */}
+                      <div>
+                        <p className="text-white/60 text-xs font-semibold mb-2">Gates</p>
+                        <div className="flex gap-2 flex-wrap">
+                          {Object.entries(startup.gates).map(([k, v]) => (
+                            <Badge
+                              key={k}
+                              variant="outline"
+                              className={`text-xs ${
+                                v === "PASS"
+                                  ? "bg-green-900/20 text-green-300 border-green-800"
+                                  : v === "CONDITIONAL"
+                                  ? "bg-yellow-900/20 text-yellow-300 border-yellow-800"
+                                  : "bg-red-900/20 text-red-300 border-red-800"
+                              }`}
+                            >
+                              {k.toUpperCase()}: {v}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Heatmap D1-D6 */}
+                      <div>
+                        <p className="text-white/60 text-xs font-semibold mb-3">
+                          Heatmap (D1–D6)
+                        </p>
+                        <div className="space-y-2">
+                          {Object.entries(startup.dims).map(([dim, score]) => (
+                            <div key={dim}>
+                              <div className="flex justify-between text-xs mb-1">
+                                <span className="text-white/60">{dim.toUpperCase()}</span>
+                                <span className="text-white/40">{score}%</span>
+                              </div>
+                              <Progress value={score} className="h-1" />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Top2 */}
+                      {startup.top2.length > 0 && (
                         <div>
-                          <p className="text-white/60 text-xs font-semibold mb-2">Gates</p>
-                          <div className="flex gap-2">
-                            {Object.entries(startup.gates).map(([k, v]) => (
-                              <Badge
-                                key={k}
-                                variant="outline"
-                                className={`text-xs ${
-                                  v === "PASS"
-                                    ? "bg-green-900/20 text-green-400"
-                                    : v === "CONDITIONAL"
-                                    ? "bg-yellow-900/20 text-yellow-400"
-                                    : "bg-red-900/20 text-red-400"
-                                }`}
-                              >
-                                {k.toUpperCase()}: {v}
+                          <p className="text-white/60 text-xs font-semibold mb-2">Top2 Rotas</p>
+                          <div className="flex flex-wrap gap-2">
+                            {startup.top2.map((route) => (
+                              <Badge key={route} style={{ backgroundColor: "rgba(49, 192, 218, 0.2)", color: "#31C0DA" }}>
+                                {route}
                               </Badge>
                             ))}
                           </div>
                         </div>
-
-                        {/* Heatmap D1-D6 */}
-                        <div>
-                          <p className="text-white/60 text-xs font-semibold mb-3">
-                            Heatmap (D1–D6)
-                          </p>
-                          <div className="space-y-2">
-                            {Object.entries(startup.dims).map(([dim, score]) => (
-                              <div key={dim}>
-                                <div className="flex justify-between text-xs mb-1">
-                                  <span className="text-white/60">{dim.toUpperCase()}</span>
-                                  <span className="text-white/40">{score}%</span>
-                                </div>
-                                <Progress value={score} className="h-1 bg-white/10" />
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Top2 */}
-                        {startup.top2.length > 0 && (
-                          <div>
-                            <p className="text-white/60 text-xs font-semibold mb-2">Top2 Rotas</p>
-                            <div className="flex flex-wrap gap-2">
-                              {startup.top2.map((route) => (
-                                <Badge key={route} className="bg-cyan-900/30 text-cyan-400">
-                                  {route}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </DialogContent>
-                  )}
-                </Dialog>
-              ))
-            )}
-          </div>
-        </CardContent>
-      </Card>
+                      )}
+                    </div>
+                  </DialogContent>
+                )}
+              </Dialog>
+            ))
+          )}
+        </div>
+      </div>
     </div>
   );
 }
