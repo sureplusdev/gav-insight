@@ -87,32 +87,49 @@ export default function CTASlide() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 0.6 }}
-          className="mt-14 text-center"
+          transition={{ delay: 0.6, duration: 0.6 }}
+          className="mt-12 text-center"
         >
-          <div className="p-8 rounded-3xl border" style={{
+          <h3 className="text-2xl md:text-4xl font-bold text-white leading-tight">
+            Pronto para destravar<br />seu portfólio?
+          </h3>
+          
+          <div className="mt-8 p-8 rounded-3xl border" style={{
             background: "linear-gradient(to bottom right, rgba(49, 192, 218, 0.1), rgba(49, 192, 218, 0.05), transparent)",
             borderColor: "rgba(49, 192, 218, 0.15)"
           }}>
-            <h3 className="text-2xl md:text-3xl font-bold text-white">
-              Pronto para destravar seu portfólio?
-            </h3>
-            <p className="mt-3 text-white/40 text-sm max-w-lg mx-auto">
-              O GAV reduz autoengano e cria uma previsão probabilística defensável. 
-              Comece com um lote piloto e veja o resultado em 30 dias.
+            <p className="text-white/40 text-base mb-6">
+              Vamos rodar o diagnóstico GAV gratuito em até 8 empresas do seu portfólio nas próximas 2 semanas.
             </p>
-            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <button className="group flex items-center gap-2 px-8 py-4 text-white font-semibold rounded-full transition-all" style={{ backgroundColor: "#31C0DA" }}
+            
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+              <div className="p-3 rounded-lg bg-white/[0.02]">
+                <p className="text-white/50 text-xs font-medium mb-1">Você recebe</p>
+                <p className="text-white/70 text-sm font-semibold">One-Pager por startup</p>
+              </div>
+              <div className="p-3 rounded-lg bg-white/[0.02]">
+                <p className="text-white/50 text-xs font-medium mb-1">Você recebe</p>
+                <p className="text-white/70 text-sm font-semibold">Dashboard completo</p>
+              </div>
+              <div className="p-3 rounded-lg bg-white/[0.02]">
+                <p className="text-white/50 text-xs font-medium mb-1">Você recebe</p>
+                <p className="text-white/70 text-sm font-semibold">Recomendação clara</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+              <button className="group w-full sm:w-auto flex items-center justify-center gap-2 px-10 py-4 text-white font-bold rounded-full transition-all text-lg" style={{ backgroundColor: "#31C0DA" }}
                 onMouseEnter={(e) => e.target.style.backgroundColor = "#2C8FAE"}
                 onMouseLeave={(e) => e.target.style.backgroundColor = "#31C0DA"}
               >
-                Agendar Kickoff
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </button>
-              <button className="px-8 py-4 text-white/40 hover:text-white/70 font-medium text-sm transition-all">
-                Baixar documento completo
+                Agendar agora
+                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </button>
             </div>
+
+            <p className="text-white/30 text-sm">
+              Sem custo. Sem compromisso. Só resultado concreto.
+            </p>
           </div>
 
           <p className="mt-8 text-white/15 text-xs tracking-wider uppercase">
