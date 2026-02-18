@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { Filter, BarChart3, Target, Zap, X, Check } from "lucide-react";
 
 const PILLARS = [
-{ icon: Filter, label: "Triagem", desc: "Gates eliminatórios (G1–G3) cortam casos mortos antes de pontuar", color: "brand" },
-{ icon: BarChart3, label: "Scoring com Evidência", desc: "Dimensões D1–D6 com evidência E0–E3 — nota alta sem prova não passa", color: "brand" },
-{ icon: Target, label: "Roteamento", desc: "Grant, Crédito ou CPSI — a rota certa para cada perfil", color: "brand" },
-{ icon: Zap, label: "Motor Econômico", desc: "Ceiling + EV realista em 12 meses = número auditável para decisão", color: "brand" },
+{ icon: Filter, label: "Triagem dura", desc: "Corta casos mortos antes de gastar energia do fundo", color: "brand" },
+{ icon: BarChart3, label: "Scoring com prova", desc: "Sem evidência real não tem nota alta — fim de wishful thinking", color: "brand" },
+{ icon: Target, label: "Roteamento inteligente", desc: "Grant | Crédito | CPSI → rota ideal por diagnóstico", color: "brand" },
+{ icon: Zap, label: "Motor de valor", desc: "Quanto caixa não-dilutivo provável entra em 12 meses", color: "brand" },
 ];
 
 const NOT_IS = [
