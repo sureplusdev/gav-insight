@@ -12,9 +12,10 @@ import OnePageSlide from "@/components/presentation/slides/OnePageSlide";
 import DashboardSlide from "@/components/presentation/slides/DashboardSlide";
 import RoadmapSlide from "@/components/presentation/slides/RoadmapSlide";
 import CaseSlide from "@/components/presentation/slides/CaseSlide";
+import SurePlusSlide from "@/components/presentation/slides/SurePlusSlide";
 import CTASlide from "@/components/presentation/slides/CTASlide";
 
-const TOTAL_SLIDES = 9;
+const TOTAL_SLIDES = 12;
 
 export default function Presentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
