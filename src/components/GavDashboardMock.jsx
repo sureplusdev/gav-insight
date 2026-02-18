@@ -29,6 +29,7 @@ import {
   RotateCw,
   Search,
   TrendingUp,
+  HelpCircle,
 } from "lucide-react";
 
 const mockStartups = [
