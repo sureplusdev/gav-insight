@@ -29,7 +29,7 @@ const KPI_CARDS = [
 
 export default function DashboardSlide() {
   return (
-    <div className="min-h-screen flex items-center py-12 px-6" style={{ backgroundColor: "#193A62" }}>
+    <div className="min-h-screen flex items-center py-12 px-6" style={{ backgroundColor: "#3a3a3a" }}>
       <div className="max-w-7xl mx-auto w-full">
         {/* Header */}
         <motion.div
