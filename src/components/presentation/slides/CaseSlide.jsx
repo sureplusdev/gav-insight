@@ -86,12 +86,12 @@ export default function CaseSlide() {
               </div>
             </div>
 
-            <div className="mt-5 p-3 rounded-xl border" style={{
+            <div className="mt-4 p-3 rounded-xl border" style={{
               backgroundColor: "rgba(49, 192, 218, 0.05)",
               borderColor: "rgba(49, 192, 218, 0.1)"
             }}>
               <p className="text-white/30 text-xs">
-                 <span className="font-medium" style={{ color: "#31C0DA" }}>Cortado:</span> N3 (top grant) adiado por D5/D4 — evita queimar reputação.
+                 <span className="font-medium" style={{ color: "#31C0DA" }}>Decisão:</span> N3 (top grant) adiado estrategicamente. Fundo não queima reputação em aplicação prematura.
                </p>
             </div>
           </motion.div>
