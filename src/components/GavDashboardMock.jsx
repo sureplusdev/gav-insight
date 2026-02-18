@@ -332,23 +332,24 @@ export default function GavDashboardMock() {
                 </DialogTrigger>
 
                 {selected && selected.id === startup.id && (
-                  <DialogContent className="max-w-2xl border-white/10" style={{ backgroundColor: "#E8F4F8" }}>
-                    <DialogHeader>
-                      <DialogTitle className="text-xl text-gray-900">{startup.name} — Detalhes</DialogTitle>
-                    </DialogHeader>
+                  <DialogContent className="max-w-2xl border-white/10 p-0 overflow-hidden" style={{ backgroundColor: "#0F1F38" }}>
+                    <div className="px-8 py-6 border-b border-white/10" style={{ backgroundColor: "#193A62" }}>
+                      <h2 className="text-2xl font-bold text-white">{startup.name} — Detalhes</h2>
+                      <p className="text-sm mt-1" style={{ color: "#31C0DA" }}>{startup.verticalMacro}</p>
+                    </div>
 
-                    <div className="space-y-4">
+                    <div className="p-8 space-y-6">
                       {/* ENDV Comparison */}
-                      <div className="grid grid-cols-2 gap-3">
-                        <div className="p-3 rounded" style={{ backgroundColor: "rgba(49, 192, 218, 0.1)" }}>
-                          <p className="text-gray-600 text-xs mb-1">Base</p>
-                          <p className="font-bold text-lg" style={{ color: "#31C0DA" }}>
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="p-5 rounded-lg border border-white/10" style={{ backgroundColor: "rgba(255,255,255,0.05)" }}>
+                          <p className="text-xs text-white/60 mb-2">ENDV Base</p>
+                          <p className="text-3xl font-bold text-white">
                             R$ {(startup.endvBase / 1000000).toFixed(1)}M
                           </p>
                         </div>
-                        <div className="p-3 rounded" style={{ backgroundColor: "rgba(49, 192, 218, 0.1)" }}>
-                          <p className="text-gray-600 text-xs mb-1">Ajustado</p>
-                          <p className="font-bold text-lg" style={{ color: "#31C0DA" }}>
+                        <div className="p-5 rounded-lg border" style={{ backgroundColor: "rgba(49, 192, 218, 0.1)", borderColor: "rgba(49, 192, 218, 0.3)" }}>
+                          <p className="text-xs mb-2" style={{ color: "#31C0DA" }}>ENDV Ajustado</p>
+                          <p className="text-3xl font-bold" style={{ color: "#31C0DA" }}>
                             R$ {(startup.endvAjustado / 1000000).toFixed(1)}M
                           </p>
                         </div>
@@ -356,39 +357,34 @@ export default function GavDashboardMock() {
 
                       {/* Gates */}
                       <div>
-                        <p className="text-gray-700 text-xs font-semibold mb-2">Gates</p>
-                        <div className="flex gap-2 flex-wrap">
+                        <p className="text-sm text-white/60 mb-3 font-semibold">Gates</p>
+                        <div className="flex gap-3 flex-wrap">
                           {Object.entries(startup.gates).map(([k, v]) => (
-                            <Badge
-                              key={k}
-                              variant="outline"
-                              className={`text-xs ${
-                                v === "PASS"
-                                  ? "bg-green-900/20 text-green-300 border-green-800"
-                                  : v === "CONDITIONAL"
-                                  ? "bg-yellow-900/20 text-yellow-300 border-yellow-800"
-                                  : "bg-red-900/20 text-red-300 border-red-800"
-                              }`}
-                            >
-                              {k.toUpperCase()}: {v}
-                            </Badge>
+                            <div key={k} className="px-4 py-2 rounded-lg border border-white/10" style={{ backgroundColor: "rgba(255,255,255,0.05)" }}>
+                              <div className="text-xs tracking-widest text-white/50 uppercase">{k}</div>
+                              <div className="mt-1 text-sm font-semibold text-white">{v}</div>
+                            </div>
                           ))}
                         </div>
                       </div>
 
                       {/* Heatmap D1-D6 */}
                       <div>
-                        <p className="text-gray-700 text-xs font-semibold mb-3">
-                          Heatmap (D1–D6)
-                        </p>
-                        <div className="space-y-2">
+                        <p className="text-sm text-white/60 mb-4 font-semibold">Heatmap (D1–D6)</p>
+                        <div className="space-y-3">
                           {Object.entries(startup.dims).map(([dim, score]) => (
-                            <div key={dim}>
-                              <div className="flex justify-between text-xs mb-1">
-                                <span className="text-gray-700">{dim.toUpperCase()}</span>
-                                <span className="text-gray-500">{score}%</span>
+                            <div key={dim} className="flex items-center gap-4">
+                              <div className="w-8 text-right font-mono text-white/70 text-sm">{dim.toUpperCase()}</div>
+                              <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
+                                <div 
+                                  className="h-full rounded-full" 
+                                  style={{ 
+                                    width: `${score}%`,
+                                    backgroundColor: "#31C0DA"
+                                  }} 
+                                />
                               </div>
-                              <Progress value={score} className="h-1" />
+                              <div className="w-10 text-right font-semibold text-white text-sm">{score}%</div>
                             </div>
                           ))}
                         </div>
@@ -397,12 +393,12 @@ export default function GavDashboardMock() {
                       {/* Top2 */}
                       {startup.top2.length > 0 && (
                         <div>
-                          <p className="text-gray-700 text-xs font-semibold mb-2">Top2 Rotas</p>
+                          <p className="text-sm text-white/60 mb-3 font-semibold">Top2 Rotas</p>
                           <div className="flex flex-wrap gap-2">
                             {startup.top2.map((route) => (
-                              <Badge key={route} style={{ backgroundColor: "rgba(49, 192, 218, 0.2)", color: "#31C0DA" }}>
+                              <div key={route} className="px-4 py-2 rounded-full text-sm font-medium border" style={{ backgroundColor: "rgba(49, 192, 218, 0.1)", borderColor: "rgba(49, 192, 218, 0.3)", color: "#31C0DA" }}>
                                 {route}
-                              </Badge>
+                              </div>
                             ))}
                           </div>
                         </div>
