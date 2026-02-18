@@ -87,12 +87,13 @@ export default function Presentation() {
       />
       <button
         onClick={() => setIsGlossaryOpen(true)}
-        className="fixed top-4 right-4 z-50 p-3 rounded-full shadow-lg transition-all hover:scale-110"
+        className="fixed top-4 right-4 z-50 flex items-center gap-2 px-4 py-3 rounded-full shadow-lg transition-all hover:scale-105 font-semibold text-white"
         style={{ backgroundColor: "#31C0DA" }}
         aria-label="Abrir Glossário"
         title="Glossário de termos"
       >
-        <BookOpen className="w-5 h-5 text-white" />
+        <BookOpen className="w-5 h-5" />
+        Glossário
       </button>
       <GlossaryModal isOpen={isGlossaryOpen} onClose={() => setIsGlossaryOpen(false)} />
     </div>
