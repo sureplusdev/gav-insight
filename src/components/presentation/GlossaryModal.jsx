@@ -67,7 +67,11 @@ const GLOSSARY_TERMS = [
     term: "N2, N3 (Grants)",
     definition: "Nomes de grants específicos com diferentes níveis de prestígio, competitividade e requisitos de aprovação.",
   },
-];
+  {
+    term: "Capturabilidade",
+    definition: "Capacidade real e mensurável de uma startup efetivamente capturar recursos não-dilutivos em um horizonte de 12 meses.",
+  },
+  ];
 
 export default function GlossaryModal({ isOpen, onClose }) {
   return (
