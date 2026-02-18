@@ -4,8 +4,10 @@ import SlideContainer from "@/components/presentation/SlideContainer";
 import SlideNav from "@/components/presentation/SlideNav";
 import GlossaryModal from "@/components/presentation/GlossaryModal";
 import BackgroundAnimation from "@/components/presentation/BackgroundAnimation";
-import IntroSlide from "@/components/presentation/slides/IntroSlide";
+import FomentoContextoSlide from "@/components/presentation/slides/FomentoContextoSlide";
+import FinepFndctSlide from "@/components/presentation/slides/FinepFndctSlide";
 import InovacredSlide from "@/components/presentation/slides/InovacredSlide";
+import HeroSlide from "@/components/presentation/slides/HeroSlide";
 import ProblemSlide from "@/components/presentation/slides/ProblemSlide";
 import SolutionSlide from "@/components/presentation/slides/SolutionSlide";
 import SimulatorSlide from "@/components/presentation/slides/SimulatorSlide";
@@ -18,7 +20,7 @@ import SurePlusCreditSlide from "@/components/presentation/slides/SurePlusCredit
 import SurePlusGrantsSlide from "@/components/presentation/slides/SurePlusGrantsSlide";
 import CTASlide from "@/components/presentation/slides/CTASlide";
 
-const TOTAL_SLIDES = 13;
+const TOTAL_SLIDES = 15;
 
 export default function Presentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -66,19 +68,21 @@ export default function Presentation() {
   }, [goNext, goPrev]);
 
   const slides = [
-    <IntroSlide key={0} onNext={goNext} />,
-    <InovacredSlide key={1} />,
-    <ProblemSlide key={2} />,
-    <SolutionSlide key={3} />,
-    <SimulatorSlide key={4} />,
-    <OnePageSlide key={5} />,
-    <DashboardSlide key={6} />,
-    <RoadmapSlide key={7} />,
-    <CaseSlide key={8} />,
-    <SurePlusAboutSlide key={9} />,
-    <SurePlusCreditSlide key={10} />,
-    <SurePlusGrantsSlide key={11} />,
-    <CTASlide key={12} />,
+    <HeroSlide key={0} onNext={goNext} />,
+    <FomentoContextoSlide key={1} />,
+    <FinepFndctSlide key={2} />,
+    <InovacredSlide key={3} />,
+    <ProblemSlide key={4} />,
+    <SolutionSlide key={5} />,
+    <SimulatorSlide key={6} />,
+    <OnePageSlide key={7} />,
+    <DashboardSlide key={8} />,
+    <RoadmapSlide key={9} />,
+    <CaseSlide key={10} />,
+    <SurePlusAboutSlide key={11} />,
+    <SurePlusCreditSlide key={12} />,
+    <SurePlusGrantsSlide key={13} />,
+    <CTASlide key={14} />,
   ];
 
   return (
