@@ -7,11 +7,13 @@ import SolutionSlide from "@/components/presentation/slides/SolutionSlide";
 import ArchitectureSlide from "@/components/presentation/slides/ArchitectureSlide";
 import ScoringSlide from "@/components/presentation/slides/ScoringSlide";
 import EVMotorSlide from "@/components/presentation/slides/EVMotorSlide";
-import DeliverablesSlide from "@/components/presentation/slides/DeliverablesSlide";
+import SimulatorSlide from "@/components/presentation/slides/SimulatorSlide";
+import RoadmapSlide from "@/components/presentation/slides/RoadmapSlide";
+import DashboardSlide from "@/components/presentation/slides/DashboardSlide";
 import CaseSlide from "@/components/presentation/slides/CaseSlide";
 import CTASlide from "@/components/presentation/slides/CTASlide";
 
-const TOTAL_SLIDES = 9;
+const TOTAL_SLIDES = 12;
 
 export default function Presentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
