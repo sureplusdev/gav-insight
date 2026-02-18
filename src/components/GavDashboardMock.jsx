@@ -332,7 +332,7 @@ export default function GavDashboardMock() {
                 </DialogTrigger>
 
                 {selected && selected.id === startup.id && (
-                  <DialogContent className="max-w-2xl border-white/10" style={{ backgroundColor: "#F8FAFB" }}>
+                  <DialogContent className="max-w-2xl border-white/10" style={{ backgroundColor: "#E8F4F8" }}>
                     <DialogHeader>
                       <DialogTitle className="text-xl text-gray-900">{startup.name} — Detalhes</DialogTitle>
                     </DialogHeader>
