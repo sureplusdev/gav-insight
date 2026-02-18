@@ -186,58 +186,136 @@ export default function GavDashboardMock() {
       </div>
 
       {/* FILTERS */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 px-8 py-6 border-b border-white/10">
-        <div className="flex items-center gap-2">
-          <Search className="h-4 w-4 text-white/40" />
-          <Input
-            placeholder="Buscar startup..."
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-            className="bg-white/5 border-white/10 text-white placeholder:text-white/30"
-          />
-        </div>
+      <div className="px-8 py-6 border-b border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4">
+          
+          {/* Busca */}
+          <div className="lg:col-span-4 flex items-center gap-2">
+            <Search className="h-4 w-4 text-white/40 flex-shrink-0" />
+            <Input
+              placeholder="Buscar startup..."
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              className="bg-white/5 border-white/10 text-white placeholder:text-white/30"
+            />
+          </div>
 
-        <Select value={tier} onValueChange={setTier}>
-          <SelectTrigger className="bg-white/5 border-white/10 text-white">
-            <SelectValue placeholder="Tier" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="ALL">Todos</SelectItem>
-            <SelectItem value="A">Tier A</SelectItem>
-            <SelectItem value="B">Tier B</SelectItem>
-            <SelectItem value="C">Tier C</SelectItem>
-            <SelectItem value="D">Tier D</SelectItem>
-          </SelectContent>
-        </Select>
+          {/* Tier com Help */}
+          <div className="lg:col-span-3 flex gap-2 items-center">
+            <Select value={tier} onValueChange={setTier}>
+              <SelectTrigger className="bg-white/5 border-white/10 text-white flex-1">
+                <SelectValue placeholder="Tier" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="ALL">Todos</SelectItem>
+                <SelectItem value="A">Tier A</SelectItem>
+                <SelectItem value="B">Tier B</SelectItem>
+                <SelectItem value="C">Tier C</SelectItem>
+                <SelectItem value="D">Tier D</SelectItem>
+              </SelectContent>
+            </Select>
+            <Dialog open={helpModal === "tier"} onOpenChange={(open) => setHelpModal(open ? "tier" : null)}>
+              <DialogTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-white/60 hover:text-white h-10 w-10"
+                  title="O que significa Tier?"
+                >
+                  <HelpCircle className="h-4 w-4" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-sm border-white/10 p-0 overflow-hidden" style={{ backgroundColor: "#0F1F38" }}>
+                <div className="px-6 py-4 border-b border-white/10" style={{ backgroundColor: "#193A62" }}>
+                  <DialogTitle className="text-white">O que é Tier?</DialogTitle>
+                </div>
+                <div className="p-6 text-white/90 space-y-4">
+                  <div>
+                    <p className="text-sm font-semibold" style={{ color: "#31C0DA" }}>Tier A</p>
+                    <p className="text-xs text-white/70">80–100 | Alta qualidade e capturabilidade</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold" style={{ color: "#31C0DA" }}>Tier B</p>
+                    <p className="text-xs text-white/70">65–79 | Bom potencial, requer ajustes</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold" style={{ color: "#31C0DA" }}>Tier C</p>
+                    <p className="text-xs text-white/70">50–64 | Viável com ações corretivas</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold" style={{ color: "#31C0DA" }}>Tier D</p>
+                    <p className="text-xs text-white/70">0–49 | Precisa de correção forte</p>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+          </div>
 
-        <Select value={status} onValueChange={setStatus}>
-          <SelectTrigger className="bg-white/5 border-white/10 text-white">
-            <SelectValue placeholder="Status" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="ALL">Todos</SelectItem>
-            <SelectItem value="CAPTURA">Captura</SelectItem>
-            <SelectItem value="CONDICIONAL">Condicional</SelectItem>
-            <SelectItem value="PREPARO">Preparo</SelectItem>
-          </SelectContent>
-        </Select>
+          {/* Status com Help */}
+          <div className="lg:col-span-3 flex gap-2 items-center">
+            <Select value={status} onValueChange={setStatus}>
+              <SelectTrigger className="bg-white/5 border-white/10 text-white flex-1">
+                <SelectValue placeholder="Status" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="ALL">Todos</SelectItem>
+                <SelectItem value="CAPTURA">Captura</SelectItem>
+                <SelectItem value="CONDICIONAL">Condicional</SelectItem>
+                <SelectItem value="PREPARO">Preparo</SelectItem>
+              </SelectContent>
+            </Select>
+            <Dialog open={helpModal === "status"} onOpenChange={(open) => setHelpModal(open ? "status" : null)}>
+              <DialogTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-white/60 hover:text-white h-10 w-10"
+                  title="O que significa o Status?"
+                >
+                  <HelpCircle className="h-4 w-4" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-sm border-white/10 p-0 overflow-hidden" style={{ backgroundColor: "#0F1F38" }}>
+                <div className="px-6 py-4 border-b border-white/10" style={{ backgroundColor: "#193A62" }}>
+                  <DialogTitle className="text-white">O que é Status?</DialogTitle>
+                </div>
+                <div className="p-6 text-white/90 space-y-4">
+                  <div>
+                    <p className="text-sm font-semibold" style={{ color: "#31C0DA" }}>Captura</p>
+                    <p className="text-xs text-white/70">Todas as gates aprovadas → Pronto para submeter</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold" style={{ color: "#31C0DA" }}>Condicional</p>
+                    <p className="text-xs text-white/70">Precisa de ação específica → Em refinamento</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold" style={{ color: "#31C0DA" }}>Preparo</p>
+                    <p className="text-xs text-white/70">Alguma gate reprovada → Foco em correção primeiro</p>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+          </div>
 
-        <Select value={vertical} onValueChange={setVertical}>
-          <SelectTrigger className="bg-white/5 border-white/10 text-white">
-            <SelectValue placeholder="Vertical" />
-          </SelectTrigger>
-          <SelectContent>
-            {verticals.map((v) => (
-              <SelectItem key={v} value={v}>
-                {v === "ALL" ? "Todos" : v}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-
-        <div className="flex items-center gap-2 px-3 py-2 rounded-md bg-white/5 border border-white/10">
-          <span className="text-xs text-white/60">Top2</span>
-          <Switch checked={onlyTop2} onCheckedChange={setOnlyTop2} />
+          {/* Vertical + Top2 */}
+          <div className="lg:col-span-2 flex gap-2 items-center">
+            <Select value={vertical} onValueChange={setVertical}>
+              <SelectTrigger className="bg-white/5 border-white/10 text-white flex-1">
+                <SelectValue placeholder="Vertical" />
+              </SelectTrigger>
+              <SelectContent>
+                {verticals.map((v) => (
+                  <SelectItem key={v} value={v}>
+                    {v === "ALL" ? "Todos" : v}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-md bg-white/5 border border-white/10 whitespace-nowrap">
+              <span className="text-xs text-white/60">Top2</span>
+              <Switch checked={onlyTop2} onCheckedChange={setOnlyTop2} />
+            </div>
+          </div>
         </div>
       </div>
 
