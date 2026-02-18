@@ -62,24 +62,29 @@ export default function RoadmapSlide() {
             >
               {/* Timeline connector */}
               {i < SPRINTS.length - 1 && (
-                <div className="absolute left-12 top-20 w-0.5 h-12 bg-gradient-to-b from-brand-500/40 to-transparent" />
+                <div className="absolute left-12 top-20 w-0.5 h-12" style={{ background: "linear-gradient(to bottom, rgba(49, 192, 218, 0.4), transparent)" }} />
               )}
 
-              <div className="flex gap-6 items-start p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/15 transition-all">
+              <div className="flex gap-6 items-start p-6 rounded-2xl border transition-all" style={{ 
+                backgroundColor: "rgba(255, 255, 255, 0.02)",
+                borderColor: "rgba(49, 192, 218, 0.15)"
+              }}>
                 {/* Number Circle */}
                 <div className="relative flex-shrink-0">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center text-white font-bold shadow-lg">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold shadow-lg" style={{ 
+                    background: "linear-gradient(to bottom right, #31C0DA, #2C8FAE)"
+                  }}>
                     {i + 1}
                   </div>
                   {i < SPRINTS.length - 1 && (
-                    <div className="absolute top-10 left-1/2 -translate-x-1/2 w-0.5 h-4 bg-gradient-to-b from-brand-500/40 to-transparent" />
+                    <div className="absolute top-10 left-1/2 -translate-x-1/2 w-0.5 h-4" style={{ background: "linear-gradient(to bottom, rgba(49, 192, 218, 0.4), transparent)" }} />
                   )}
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-3 flex-wrap mb-2">
-                    <span className="text-brand-500 font-bold text-sm">{item.sprint}</span>
+                    <span className="font-bold text-sm" style={{ color: "#31C0DA" }}>{item.sprint}</span>
                     <span className="flex items-center gap-1 text-white/30 text-xs">
                       <Clock className="w-3 h-3" /> {item.days}
                     </span>
@@ -90,7 +95,11 @@ export default function RoadmapSlide() {
                   {/* Subtasks */}
                   <div className="flex flex-wrap gap-2 mt-4">
                     {item.tasks.map((task, j) => (
-                      <span key={j} className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-brand-500/10 text-brand-300/70 text-xs border border-brand-500/20">
+                      <span key={j} className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs border" style={{ 
+                        backgroundColor: "rgba(49, 192, 218, 0.1)",
+                        color: "rgba(49, 192, 218, 0.7)",
+                        borderColor: "rgba(49, 192, 218, 0.2)"
+                      }}>
                         <CheckCircle2 className="w-3 h-3" />
                         {task}
                       </span>
@@ -115,11 +124,11 @@ export default function RoadmapSlide() {
           </div>
           <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-center">
             <p className="text-white/40 text-xs font-mono mb-1">Expectativa ENDV ↑</p>
-            <p className="text-brand-500 font-bold text-2xl">+250–400%</p>
+            <p className="font-bold text-2xl" style={{ color: "#31C0DA" }}>+250–400%</p>
           </div>
           <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-center">
             <p className="text-white/40 text-xs font-mono mb-1">Readiness Target</p>
-            <p className="text-blue-400 font-bold text-2xl">Tier A/B</p>
+            <p className="font-bold text-2xl" style={{ color: "#31C0DA" }}>Tier A/B</p>
           </div>
         </motion.div>
       </div>
