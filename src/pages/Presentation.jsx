@@ -68,10 +68,10 @@ export default function Presentation() {
   }, [goNext, goPrev]);
 
   const slides = [
-    <FomentoContextoSlide key={0} />,
-    <FinepFndctSlide key={1} />,
-    <InovacredSlide key={2} />,
-    <HeroSlide key={3} onNext={goNext} />,
+    <HeroSlide key={0} onNext={goNext} />,
+    <FomentoContextoSlide key={1} />,
+    <FinepFndctSlide key={2} />,
+    <InovacredSlide key={3} />,
     <ProblemSlide key={4} />,
     <SolutionSlide key={5} />,
     <SimulatorSlide key={6} />,
