@@ -73,19 +73,21 @@ export default function SimulatorSlide() {
               </label>
               <div className="grid grid-cols-4 gap-2">
                 {[
-                  { level: 0, label: "E0", desc: "Nulo", color: "from-red-500" },
-                  { level: 1, label: "E1", desc: "Fraco", color: "from-brand-400" },
-                  { level: 2, label: "E2", desc: "Sólido", color: "from-brand-300" },
-                  { level: 3, label: "E3", desc: "Auditado", color: "from-brand-500" }
+                  { level: 0, label: "E0", desc: "Nulo", color: "#6B7280" },
+                  { level: 1, label: "E1", desc: "Fraco", color: "#31C0DA" },
+                  { level: 2, label: "E2", desc: "Sólido", color: "#31C0DA" },
+                  { level: 3, label: "E3", desc: "Auditado", color: "#31C0DA" }
                 ].map((e) => (
                   <button
                     key={e.level}
                     onClick={() => setEvidence(e.level)}
-                    className={`p-3 rounded-lg transition-all text-center transform ${
-                      evidence === e.level
-                        ? `bg-gradient-to-br ${e.color} to-white/10 border border-brand-500/30 scale-110 shadow-lg`
-                        : "bg-white/5 border border-white/10 hover:border-white/20"
-                    }`}
+                    className="p-3 rounded-lg transition-all text-center transform"
+                    style={{ 
+                      backgroundColor: evidence === e.level ? "rgba(49, 192, 218, 0.15)" : "rgba(255, 255, 255, 0.05)",
+                      borderColor: evidence === e.level ? "rgba(49, 192, 218, 0.3)" : "rgba(255, 255, 255, 0.1)",
+                      border: "1px solid",
+                      transform: evidence === e.level ? "scale(1.1)" : "scale(1)"
+                    }}
                   >
                     <div className="font-bold text-white text-sm">{e.label}</div>
                     <div className="text-white/40 text-xs">{e.desc}</div>
@@ -133,8 +135,11 @@ export default function SimulatorSlide() {
             className="flex flex-col gap-4"
           >
             {/* Main Output */}
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-500/10 via-slate-900 to-blue-500/10 border border-emerald-500/20 p-8 flex-1 flex flex-col justify-center">
-              <div className="absolute top-0 right-0 opacity-5 text-brand-500">
+            <div className="relative overflow-hidden rounded-3xl border p-8 flex-1 flex flex-col justify-center" style={{ 
+              backgroundColor: "rgba(25, 58, 98, 0.8)",
+              borderColor: "rgba(49, 192, 218, 0.2)"
+            }}>
+               <div className="absolute top-0 right-0 opacity-5" style={{ color: "#31C0DA" }}>
                 <Calculator className="w-40 h-40" />
               </div>
               <div className="relative z-10">
@@ -147,11 +152,11 @@ export default function SimulatorSlide() {
                   animate={{ scale: 1, opacity: 1 }}
                   className="text-6xl md:text-7xl font-black text-white mb-3 tracking-tighter"
                 >
-                  <span className="text-brand-500">R$</span>{" "}
+                  <span style={{ color: "#31C0DA" }}>R$</span>{" "}
                   {(endv / 1000000).toFixed(2)}
                   <span className="text-white/30 text-4xl">M</span>
                 </motion.div>
-                <p className="text-brand-500/60 text-sm">
+                <p className="text-sm" style={{ color: "rgba(49, 192, 218, 0.6)" }}>
                   ENDV = Ceiling × Probabilidade × F_execução
                 </p>
               </div>
@@ -173,11 +178,11 @@ export default function SimulatorSlide() {
               <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
                 <p className="text-white/40 text-xs font-mono mb-1">GAP vs CEILING</p>
                 <motion.p
-                  key={ceiling - endv}
-                  initial={{ y: 10, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  className="text-red-400 font-bold text-xl"
-                >
+                    key={ceiling - endv}
+                    initial={{ y: 10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    className="font-bold text-xl" style={{ color: "#FFB3B3" }}
+                  >
                   {((1 - endv / ceiling) * 100).toFixed(0)}%
                 </motion.p>
               </div>
@@ -188,10 +193,13 @@ export default function SimulatorSlide() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 flex items-start gap-3"
+                className="p-4 rounded-xl border flex items-start gap-3" style={{
+                  backgroundColor: "rgba(49, 192, 218, 0.1)",
+                  borderColor: "rgba(49, 192, 218, 0.2)"
+                }}
               >
-                <AlertCircle className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" />
-                <p className="text-red-200/70 text-xs">
+                <AlertCircle className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#31C0DA" }} />
+                <p className="text-xs" style={{ color: "rgba(49, 192, 218, 0.7)" }}>
                   Baixa evidência limita o teto de captação. Priorize D5 e documentação.
                 </p>
               </motion.div>
