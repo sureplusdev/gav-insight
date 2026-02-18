@@ -68,18 +68,21 @@ export default function Presentation() {
   }, [goNext, goPrev]);
 
   const slides = [
-    <HeroSlide key={0} onNext={goNext} />,
-    <ProblemSlide key={1} />,
-    <SolutionSlide key={2} />,
-    <SimulatorSlide key={3} />,
-    <OnePageSlide key={4} />,
-    <DashboardSlide key={5} />,
-    <RoadmapSlide key={6} />,
-    <CaseSlide key={7} />,
-    <SurePlusAboutSlide key={8} />,
-    <SurePlusCreditSlide key={9} />,
-    <SurePlusGrantsSlide key={10} />,
-    <CTASlide key={11} />,
+    <FomentoContextoSlide key={0} />,
+    <FinepFndctSlide key={1} />,
+    <InovacredSlide key={2} />,
+    <HeroSlide key={3} onNext={goNext} />,
+    <ProblemSlide key={4} />,
+    <SolutionSlide key={5} />,
+    <SimulatorSlide key={6} />,
+    <OnePageSlide key={7} />,
+    <DashboardSlide key={8} />,
+    <RoadmapSlide key={9} />,
+    <CaseSlide key={10} />,
+    <SurePlusAboutSlide key={11} />,
+    <SurePlusCreditSlide key={12} />,
+    <SurePlusGrantsSlide key={13} />,
+    <CTASlide key={14} />,
   ];
 
   return (
