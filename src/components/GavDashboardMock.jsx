@@ -340,13 +340,13 @@ export default function GavDashboardMock() {
                     <div className="space-y-4">
                       {/* ENDV Comparison */}
                       <div className="grid grid-cols-2 gap-3">
-                        <div className="p-3 rounded bg-gray-100">
+                        <div className="p-3 rounded" style={{ backgroundColor: "rgba(49, 192, 218, 0.1)" }}>
                           <p className="text-gray-600 text-xs mb-1">Base</p>
                           <p className="font-bold text-lg" style={{ color: "#31C0DA" }}>
                             R$ {(startup.endvBase / 1000000).toFixed(1)}M
                           </p>
                         </div>
-                        <div className="p-3 rounded bg-gray-100">
+                        <div className="p-3 rounded" style={{ backgroundColor: "rgba(49, 192, 218, 0.1)" }}>
                           <p className="text-gray-600 text-xs mb-1">Ajustado</p>
                           <p className="font-bold text-lg" style={{ color: "#31C0DA" }}>
                             R$ {(startup.endvAjustado / 1000000).toFixed(1)}M
