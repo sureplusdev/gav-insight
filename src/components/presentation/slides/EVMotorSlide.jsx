@@ -48,14 +48,19 @@ export default function EVMotorSlide() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-brand-500/60 text-xs font-semibold tracking-[0.2em] uppercase">
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "rgba(49, 192, 218, 0.6)" }}>
             Motor Econômico
           </span>
           <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
             De score para<br />
-            <span className="bg-gradient-to-r from-brand-500 to-brand-400 bg-clip-text text-transparent">
-              R$ provável em 12 meses.
-            </span>
+            <span style={{ 
+                backgroundImage: "linear-gradient(to right, #31C0DA, #2C8FAE)",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                color: "transparent"
+              }}>
+                R$ provável em 12 meses.
+              </span>
           </h2>
         </motion.div>
 
