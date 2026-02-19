@@ -43,9 +43,10 @@ export default function SimulatorSlide() {
           >
             {/* Ceiling */}
             <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
-              <label className="text-xs font-semibold text-white/50 uppercase tracking-wider block mb-4">
-                Volume de Editais em Janela (R$)
+              <label className="text-xs font-semibold text-white/50 uppercase tracking-wider block mb-1">
+                Quanto tem em aberto para ela? (Editais + Crédito)
               </label>
+              <p className="text-white/25 text-xs mb-3">O teto máximo — se tudo desse certo</p>
               <input
                  type="range"
                  min="1000000"
