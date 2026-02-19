@@ -17,7 +17,7 @@ import CaseSlide from "@/components/presentation/slides/CaseSlide";
 import SurePlusProfileSlide from "@/components/presentation/slides/SurePlusProfileSlide";
 import CTASlide from "@/components/presentation/slides/CTASlide";
 
-const TOTAL_SLIDES = 11;
+const TOTAL_SLIDES = 12;
 
 export default function Presentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
