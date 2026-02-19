@@ -89,6 +89,35 @@ export default function SolutionSlide() {
           <p className="mt-3 text-xs text-white/25">Passa nos 3 → entra no modo captura. Não passa → vira "Preparo" ou é cortada do pipeline.</p>
         </motion.div>
 
+        {/* 6 Dimensões */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.82, duration: 0.6 }}
+          className="mt-6 p-5 rounded-2xl border border-white/8 bg-white/[0.02]"
+        >
+          <p className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: "rgba(49,192,218,0.5)" }}>Como o GAV avalia cada startup — 6 dimensões</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {[
+              { d: "D1", label: "Mérito Técnico", desc: "A tecnologia é real e inovadora, ou só ideia bonita?" },
+              { d: "D2", label: "Problema e Impacto", desc: "Resolve uma dor grande e relevante para o mercado?" },
+              { d: "D3", label: "Execução", desc: "O time consegue entregar sem se perder no caminho?" },
+              { d: "D4", label: "Financeiro e Runway", desc: "Tem caixa para aguentar o tempo que o dinheiro demora?" },
+              { d: "D5", label: "Compliance e Docs", desc: "Tem provas reais que um auditor aceita? Tudo em ordem legal?" },
+              { d: "D6", label: "Fit com o Fundo", desc: "Ajuda ou atrapalha a tese e estratégia de vocês?" },
+            ].map(({ d, label, desc }) => (
+              <div key={d} className="flex items-start gap-3 p-3 rounded-xl" style={{ backgroundColor: "rgba(255,255,255,0.03)" }}>
+                <span className="text-xs font-bold px-2 py-0.5 rounded mt-0.5 flex-shrink-0" style={{ backgroundColor: "rgba(49,192,218,0.15)", color: "#31C0DA" }}>{d}</span>
+                <div>
+                  <p className="text-white/70 text-xs font-semibold">{label}</p>
+                  <p className="text-white/35 text-xs leading-snug mt-0.5">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-xs text-white/25">Cada dimensão recebe nota de 0 a 5. Sem evidência real, nota alta não passa.</p>
+        </motion.div>
+
         {/* Elevator Pitch */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
