@@ -28,8 +28,8 @@ export default function SimulatorSlide() {
             Motor Econômico
           </span>
           <h2 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
-            Simulador ENDV<br />
-            <span className="text-white/30">Veja como a evidência muda tudo.</span>
+            Quanto essa startup <span style={{ color: "#31C0DA" }}>realmente</span> consegue captar?<br />
+            <span className="text-white/30 text-2xl md:text-3xl font-light">Mexa nos controles e veja o número mudar ao vivo.</span>
           </h2>
         </motion.div>
 
