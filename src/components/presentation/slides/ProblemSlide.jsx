@@ -105,11 +105,10 @@ export default function ProblemSlide() {
           }}
         >
           <p className="text-white/60 text-sm md:text-base leading-relaxed italic">
-            "Uma startup pode ser boa e ainda assim não capturar recursos em 12 meses — 
-            por falta de evidência, governança fraca, contrapartidas inviáveis ou runway insuficiente."
+            "Uma startup pode ser ótima e ainda assim não conseguir um real de fomento em 12 meses — por falta de documento, governança fraca, contrapartidas inviáveis ou simplesmente porque o fundo nunca parou para medir isso com rigor."
           </p>
           <p className="mt-3 text-white/25 text-xs font-medium tracking-wider uppercase">
-            Resultado previsível: energia máxima, impacto mínimo.
+            Resultado previsível: energia máxima, caixa mínimo.
           </p>
         </motion.div>
       </div>
