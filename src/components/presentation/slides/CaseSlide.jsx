@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, TrendingUp, AlertCircle, CheckCircle2 } from "lucide-react";
+import { ArrowRight, TrendingUp, AlertCircle, CheckCircle2, HelpCircle } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 const GATES_BEFORE = [
    { gate: "G1", label: "Núcleo executável", status: "CONDICIONAL", color: "#31C0DA", bg: "rgba(49, 192, 218, 0.1)" },
