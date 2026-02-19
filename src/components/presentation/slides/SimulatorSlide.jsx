@@ -103,9 +103,10 @@ export default function SimulatorSlide() {
 
             {/* Execution Factor */}
             <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
-              <label className="text-xs font-semibold text-white/50 uppercase tracking-wider block mb-4">
-                Fator de Execução (F_ex)
+              <label className="text-xs font-semibold text-white/50 uppercase tracking-wider block mb-1">
+                Ela consegue executar? (Capacidade real)
               </label>
+              <p className="text-white/25 text-xs mb-3">Time, governança, runway — o quanto não trava na hora H</p>
               <input
                  type="range"
                  min="0"
