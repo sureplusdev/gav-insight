@@ -4,15 +4,16 @@ import { motion } from "framer-motion";
 
 const SLIDE_LABELS = [
   "Início",
+  "Fomento FINEP",
   "O Problema",
   "A Solução",
-  "Arquitetura",
-  "Scoring",
-  "Motor EV",
+  "Como o GAV Funciona",
   "Simulador",
-  "Roadmap",
+  "One-Pager",
   "Dashboard",
+  "Roadmap",
   "Case",
+  "Sure Plus",
   "Próximos Passos"
 ];
 
