@@ -8,6 +8,7 @@ import FomentoOportunidadesSlide from "@/components/presentation/slides/FomentoO
 import HeroSlide from "@/components/presentation/slides/HeroSlide";
 import ProblemSlide from "@/components/presentation/slides/ProblemSlide";
 import SolutionSlide from "@/components/presentation/slides/SolutionSlide";
+import GavMethodSlide from "@/components/presentation/slides/GavMethodSlide";
 import SimulatorSlide from "@/components/presentation/slides/SimulatorSlide";
 import OnePageSlide from "@/components/presentation/slides/OnePageSlide";
 import DashboardSlide from "@/components/presentation/slides/DashboardSlide";
