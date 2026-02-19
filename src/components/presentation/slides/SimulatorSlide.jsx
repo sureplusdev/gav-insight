@@ -168,7 +168,7 @@ export default function SimulatorSlide() {
             {/* Insights */}
             <div className="grid grid-cols-2 gap-3">
               <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                <p className="text-white/40 text-xs font-mono mb-1">PROBABILIDADE REAL</p>
+                <p className="text-white/40 text-xs font-mono mb-1">CHANCE REAL</p>
                 <motion.p
                   key={evidence}
                   initial={{ y: 10, opacity: 0 }}
