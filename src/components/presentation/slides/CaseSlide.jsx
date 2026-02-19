@@ -17,6 +17,7 @@ const SPRINTS = [
 ];
 
 export default function CaseSlide() {
+  const [open, setOpen] = useState(false);
   return (
     <div className="min-h-screen flex items-center py-20 px-6" style={{ backgroundColor: "#193A62" }}>
       <div className="max-w-6xl mx-auto w-full">
