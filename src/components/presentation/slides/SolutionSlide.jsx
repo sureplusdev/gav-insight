@@ -66,6 +66,29 @@ export default function SolutionSlide() {
           ))}
         </div>
 
+        {/* Gates explanation */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.6 }}
+          className="mt-6 p-5 rounded-2xl border border-white/8 bg-white/[0.02]"
+        >
+          <p className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: "rgba(49,192,218,0.5)" }}>3 perguntas antes do dinheiro (Gates)</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {[
+              { g: "G1", q: "A startup tem um produto que funciona de verdade?" },
+              { g: "G2", q: "A hipótese técnica é real ou só ideia bonita?" },
+              { g: "G3", q: "Ela tem fôlego (runway) para esperar o dinheiro cair?" },
+            ].map(({ g, q }) => (
+              <div key={g} className="flex items-start gap-3 p-3 rounded-xl" style={{ backgroundColor: "rgba(49,192,218,0.04)" }}>
+                <span className="text-xs font-bold px-2 py-0.5 rounded mt-0.5 flex-shrink-0" style={{ backgroundColor: "rgba(49,192,218,0.15)", color: "#31C0DA" }}>{g}</span>
+                <p className="text-white/50 text-sm leading-snug">{q}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-xs text-white/25">Passa nos 3 → entra no modo captura. Não passa → vira "Preparo" ou é cortada do pipeline.</p>
+        </motion.div>
+
         {/* Elevator Pitch */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
