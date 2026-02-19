@@ -69,9 +69,10 @@ export default function SimulatorSlide() {
 
             {/* Evidence */}
             <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
-              <label className="text-xs font-semibold text-white/50 uppercase tracking-wider block mb-4">
-                Nível de Evidência (E0–E3)
+              <label className="text-xs font-semibold text-white/50 uppercase tracking-wider block mb-1">
+                Que prova ela tem? (Evidência)
               </label>
+              <p className="text-white/25 text-xs mb-3">Quanto mais documento real, maior a chance de aprovação</p>
               <div className="grid grid-cols-4 gap-2">
                 {[
                   { level: 0, label: "E0", desc: "Nulo", color: "#6B7280" },
