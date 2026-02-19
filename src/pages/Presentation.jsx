@@ -69,13 +69,14 @@ export default function Presentation() {
     <FomentoOportunidadesSlide key={1} />,
     <ProblemSlide key={2} />,
     <SolutionSlide key={3} />,
-    <SimulatorSlide key={4} />,
-    <OnePageSlide key={5} />,
-    <DashboardSlide key={6} />,
-    <RoadmapSlide key={7} />,
-    <CaseSlide key={8} />,
-    <SurePlusProfileSlide key={9} />,
-    <CTASlide key={10} />,
+    <GavMethodSlide key={4} />,
+    <SimulatorSlide key={5} />,
+    <OnePageSlide key={6} />,
+    <DashboardSlide key={7} />,
+    <RoadmapSlide key={8} />,
+    <CaseSlide key={9} />,
+    <SurePlusProfileSlide key={10} />,
+    <CTASlide key={11} />,
   ];
 
   return (
