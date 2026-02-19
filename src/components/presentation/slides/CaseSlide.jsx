@@ -58,8 +58,29 @@ export default function CaseSlide() {
             }}
           >
             <div className="flex items-center gap-2 mb-5">
-               <AlertCircle className="w-4 h-4" style={{ color: "#31C0DA" }} />
+              <AlertCircle className="w-4 h-4" style={{ color: "#31C0DA" }} />
               <h3 className="text-white/60 text-sm font-semibold tracking-wider uppercase">Diagnóstico GAV</h3>
+              <Dialog open={open} onOpenChange={setOpen}>
+                <DialogTrigger asChild>
+                  <button className="ml-1 text-white/20 hover:text-[#31C0DA] transition-colors">
+                    <HelpCircle className="w-4 h-4" />
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="border text-white max-w-sm" style={{ backgroundColor: "#0F1F38", borderColor: "rgba(49,192,218,0.25)" }}>
+                  <DialogHeader>
+                    <DialogTitle style={{ color: "#31C0DA" }}>O que é o Diagnóstico GAV?</DialogTitle>
+                  </DialogHeader>
+                  <div className="text-white/75 text-sm leading-relaxed space-y-3">
+                    <p>É como um raio-X da startup.</p>
+                    <p>O GAV olha para ela e responde de forma simples e objetiva:</p>
+                    <ul className="space-y-2 pl-2">
+                      <li className="flex gap-2"><span style={{ color: "#31C0DA" }}>→</span> Quanto dinheiro não-dilutivo ela tem chance real de captar em 12 meses?</li>
+                      <li className="flex gap-2"><span style={{ color: "#31C0DA" }}>→</span> O que ainda precisa ser arrumado para aumentar essa chance?</li>
+                    </ul>
+                    <p className="text-white/40 text-xs border-t border-white/10 pt-3">Sem achismo. Só números defendíveis + plano prático.</p>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
             <div className="space-y-3 mb-6">
               {GATES_BEFORE.map((g) => (
