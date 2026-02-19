@@ -61,10 +61,13 @@ export default function ProblemSlide() {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="mt-6 max-w-2xl"
         >
-          <p className="text-white/40 text-base md:text-lg leading-relaxed font-light">
-            Em early stage, o gargalo raramente é dealflow. O gargalo é 
-            <span className="text-white/70 font-medium"> confundir "potencial" com "capturabilidade"</span> — 
-            e sem método, o fundo tenta salvar todo mundo e paga caro.
+          <p className="text-white/70 text-base md:text-lg leading-relaxed font-light mb-2">
+            A maioria das startups tem potencial real — mas potencial e{" "}
+            <span className="text-white font-medium">capacidade real de captar dinheiro</span>{" "}
+            são coisas muito diferentes.
+          </p>
+          <p className="text-white/35 text-sm leading-relaxed">
+            Sem um método para distinguir as duas, o fundo gasta energia igual em todo mundo e quase nada muda.
           </p>
         </motion.div>
 
