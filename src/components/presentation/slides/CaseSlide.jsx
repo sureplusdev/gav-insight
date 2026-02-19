@@ -77,7 +77,7 @@ export default function CaseSlide() {
                       <li className="flex gap-2"><span style={{ color: "#31C0DA" }}>→</span> Quanto dinheiro não-dilutivo ela tem chance real de captar em 12 meses?</li>
                       <li className="flex gap-2"><span style={{ color: "#31C0DA" }}>→</span> O que ainda precisa ser arrumado para aumentar essa chance?</li>
                     </ul>
-                    <p className="text-white/40 text-xs border-t border-white/10 pt-3">Sem achismo. Só números defendíveis + plano prático.</p>
+                    <p className="text-white/40 text-xs border-t border-white/10 pt-3">G1, G2 e G3 são os 3 filtros apresentados no slide da Solução — separam o que está pronto para captar, o que precisa de ajuste, e o que não vale a pena perseguir agora.</p>
                   </div>
                 </DialogContent>
               </Dialog>
