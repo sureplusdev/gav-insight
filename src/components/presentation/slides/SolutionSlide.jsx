@@ -66,11 +66,30 @@ export default function SolutionSlide() {
           ))}
         </div>
 
+        {/* Elevator Pitch */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="mt-12 p-6 rounded-2xl bg-white/[0.02] border border-white/5"
+          transition={{ delay: 0.75, duration: 0.6 }}
+          className="mt-10 p-6 rounded-2xl border"
+          style={{
+            background: "linear-gradient(to right, rgba(49,192,218,0.08), rgba(49,192,218,0.03))",
+            borderColor: "rgba(49, 192, 218, 0.25)"
+          }}
+        >
+          <p className="text-[10px] font-bold uppercase tracking-widest mb-3" style={{ color: "rgba(49,192,218,0.5)" }}>Em uma frase</p>
+          <p className="text-white/80 text-base md:text-lg leading-relaxed font-light">
+            O GAV é o sistema que permite ao fundo saber, com números defendíveis,{" "}
+            <span className="text-white font-semibold">quanto caixa não-dilutivo cada empresa do portfólio tem chance real de captar nos próximos 12 meses</span>{" "}
+            — e exatamente o que precisa ser feito para aumentar essa chance.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.95, duration: 0.6 }}
+          className="mt-5 p-6 rounded-2xl bg-white/[0.02] border border-white/5"
         >
           <h3 className="text-white/60 text-sm font-semibold tracking-wider uppercase mb-5">O que o GAV é — e o que não é</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
